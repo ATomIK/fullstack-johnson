@@ -30,11 +30,11 @@
         reload();
       });
       function reload(){
-        $.getJSON("https://www.reddit.com/r/earthporn/top/.json?count=50", function(data){
-          $('#jumbotron').css('background-image', 'url('+data.data.children[Math.floor((Math.random() * 50) + 1)].data.preview.images[0].resolutions[4].url.replace(/\&amp;/g,'&')+')');
+        $.getJSON("https://www.reddit.com/r/earthporn/top/.json?count=25", function(data){
+          $('#jumbotron').css('background-image', 'url('+data.data.children[Math.floor((Math.random() * 25) + 1)].data.preview.images[0].resolutions[4].url.replace(/\&amp;/g,'&')+')');
         });
-        $.getJSON("https://www.reddit.com/r/showerthoughts/top/.json?count=50", function(data){
-          $('#jumbotron').html("<h2>"+data.data.children[Math.floor((Math.random() * 50) + 1)].data.title+"<h2>");
+        $.getJSON("https://www.reddit.com/r/showerthoughts/top/.json?count=25", function(data){
+          $('#jumbotron').html("<h2>"+data.data.children[Math.floor((Math.random() * 25) + 1)].data.title+"<h2>");
         });
       }
     </script>
