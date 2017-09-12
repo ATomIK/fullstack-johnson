@@ -7,7 +7,6 @@
 
     <title>EarthThoughts</title>
 
-    <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
   </head>
@@ -31,10 +30,10 @@
         reload();
       });
       function reload(){
-        $.getJSON("https://www.reddit.com/r/earthporn/top/.json?count=20", function(data){
+        $.getJSON("https://www.reddit.com/r/earthporn/top/.json?count=50", function(data){
           $('#jumbotron').css('background-image', 'url('+data.data.children[Math.floor((Math.random() * 20) + 1)].data.preview.images[0].resolutions[4].url.replace(/\&amp;/g,'&')+')');
         });
-        $.getJSON("https://www.reddit.com/r/showerthoughts/top/.json?count=20", function(data){
+        $.getJSON("https://www.reddit.com/r/showerthoughts/top/.json?count=50", function(data){
           $('#jumbotron').html("<h2>"+data.data.children[Math.floor((Math.random() * 20) + 1)].data.title+"<h2>");
         });
       }
