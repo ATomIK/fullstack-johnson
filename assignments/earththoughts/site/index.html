@@ -31,10 +31,10 @@
       });
       function reload(){
         $.getJSON("https://www.reddit.com/r/earthporn/top/.json?count=50", function(data){
-          $('#jumbotron').css('background-image', 'url('+data.data.children[Math.floor((Math.random() * 20) + 1)].data.preview.images[0].resolutions[4].url.replace(/\&amp;/g,'&')+')');
+          $('#jumbotron').css('background-image', 'url('+data.data.children[Math.floor((Math.random() * 50) + 1)].data.preview.images[0].resolutions[4].url.replace(/\&amp;/g,'&')+')');
         });
         $.getJSON("https://www.reddit.com/r/showerthoughts/top/.json?count=50", function(data){
-          $('#jumbotron').html("<h2>"+data.data.children[Math.floor((Math.random() * 20) + 1)].data.title+"<h2>");
+          $('#jumbotron').html("<h2>"+data.data.children[Math.floor((Math.random() * 50) + 1)].data.title+"<h2>");
         });
       }
     </script>
