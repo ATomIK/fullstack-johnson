@@ -1,0 +1,37 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ShowerPorn</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+  </head>
+
+  <body cz-shortcut-listen="true">
+
+    <div class="container">
+      <div class="header clearfix">
+        <h3 class="text-muted">ShowerPorn</h3>
+      </div>
+
+      <div id="jumbotron" class="jumbotron"></div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $.getJSON("https://www.reddit.com/r/earthporn/top/.json?count=20", function(data){
+          $('#jumbotron').css('background-image', 'url('+data.data.children[Math.floor((Math.random() * 20) + 1)].data.preview.images[0].resolutions[4].url.replace(/\&amp;/g,'&')+')');
+        });
+        $.getJSON("https://www.reddit.com/r/showerthoughts/top/.json?count=20", function(data){
+          $('#jumbotron').html("<h2>"+data.data.children[Math.floor((Math.random() * 20) + 1)].data.title+"<h2>");
+        });
+      });
+    </script>
+
+  </body>
+</html>
