@@ -1,1 +1,1 @@
-### [View live python app](http://py.thomasj.me:8080)
+### [View live python app](http://thomasj.me/projects/earththoughts)
