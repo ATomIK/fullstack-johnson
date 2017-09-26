@@ -1,1 +1,1 @@
-# A web app to track clock-in clock-out hours on projects.
+# A web app to track your timesheet on projects.
