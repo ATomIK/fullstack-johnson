@@ -1,4 +1,4 @@
-<?php require './inc/mongo.class.php'; require './inc/mongodb.helper.php'; ?>
+<?php require './inc/mongodb.helper.php'; ?>
 
 <!DOCTYPE html>
 <html>
@@ -28,31 +28,6 @@
     </script>
   </head>
   <body>
-
-    <?php
-
-      // $user = [
-      //   [
-      //     '_id' => 1,
-      //     'first' => "fuck",
-      //     'last' => "you"
-      //   ],
-      //   [
-      //     '_id' => 2,
-      //     'first' => "up",
-      //     'last' => "yours"
-      //   ]
-      // ];
-      //
-      // $mongo = new mongo('mongo_tests', 'users');
-      // var_dump($mongo->delete());
-      //
-      // var_dump($mongo->insert($user));
-      //
-      // $r = $mongo->query();
-
-    ?>
-
     <div class="ui container">
       <div class="ui pointing  menu">
         <a class="active item">
@@ -86,6 +61,13 @@
 
         </tbody>
       </table>
+
+      <ul>
+        <li>Add user.click: pop up semantic modal and add user</li>
+        <li>Row.click: pop up semantic modal and edit user</li>
+        <li>Delete at bottom of edit modal</li>
+        <li>Done!</li>
+      </ul>
 
     </div>
 
