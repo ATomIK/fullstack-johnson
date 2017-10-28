@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * MongoDB helper
  * @author - Tom Johnson
  * @description - a less messy mongo helper.

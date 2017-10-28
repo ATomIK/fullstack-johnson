@@ -1,23 +1,39 @@
 <?php
 
-class API {
+require './mongodb.helper.php';
+
+/**
+ * API
+ * @author - Tom Johnson
+ * @description - processes actions from the index
+ */
+
+class API extends mongo {
 
   public function __construct(){
 
+    $this->mongo = new mongo("mongo_tests", "users");
+
     $this->method = $_SERVER['REQUEST_METHOD'];
-
-    $this->args = explode('/', rtrim($_SERVER['REQUEST_URI'], '/'));
-
-    while($this->args[0] == '' || $this->args[0] == 'api.php'){
-    	array_shift($this->args);
-    }
 
   }
 
   public function processApi(){
 
-    // if($this->method == "POST")
-    var_dump($this->args);
+    if($this->method == "POST"){
+
+      // pseudo put for organization
+      // meaning we're adding a user
+      if($_POST['__method'] == "PUT"){
+
+      }
+
+      // we're updating a user
+      if($_POST['__method'] == "PATCH"){
+
+      }
+
+    }
 
   }
 
