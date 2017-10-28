@@ -21,6 +21,7 @@ $(document).ready(function(){
     $.ajax({
       type: "POST",
       url: "./inc/api-v2.php",
+      data: $("#newUser").serialize(),
       success: function(response){
         $("#newUser").toggleClass("loading");
         console.log(response);
