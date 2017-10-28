@@ -68,7 +68,7 @@
       <button class="ui primary small button openAdd">Add user</button>
 
       <div id="adduser" class="ui tiny modal">
-        <div class="header">user</div>
+        <div class="header">Add new user</div>
         <div class="content">
           <form id="newUser" class="ui form">
             <div class="two fields">
@@ -78,8 +78,25 @@
               </div>
               <div class="field">
                 <label>Last name</label>
-                <input type="text" name="last" value="Doe">
+                <input type="text" name="last" placeholder="Doe">
               </div>
+            </div>
+            <div class="field">
+              <label>Email address</label>
+              <input type="email" name="email" placeholder="example@example.com">
+            </div>
+            <div class="two fields">
+              <div class="field">
+                <label>Age</label>
+                <input type="number" name="age" placeholder="32">
+              </div>
+              <div class="field">
+                <label>Nationality</label>
+                <input type="text" name="nat" placeholder="US">
+              </div>
+            </div>
+            <div class="field">
+              <input type="submit" class="ui small primary button" value="Create">
             </div>
           </form>
         </div>
