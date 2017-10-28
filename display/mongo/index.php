@@ -72,6 +72,10 @@
         </div>
       </div>
 
+      <script type="text/javascript">
+        $("#adduser").modal('show');
+      </script>
+
       <div id="edituser" class="ui tiny modal">
         <div class="header">user</div>
         <div class="content">
