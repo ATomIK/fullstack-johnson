@@ -35,8 +35,10 @@ class API extends mongo {
 
     }
 
+    // getting data in the form of json
     if($this->method == "GET"){
-      var_dump($this->mongo);
+      header('Content-Type: application/json');
+      echo json_encode(["status" => "go away."], JSON_PRETTY_PRINT);
     }
 
   }
