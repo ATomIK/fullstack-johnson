@@ -25,6 +25,8 @@
           ]
         });
 
+        $("#adduser").modal('attach events', '.openAdd', 'show');
+
       });
     </script>
   </head>
@@ -63,9 +65,9 @@
         </tbody>
       </table>
 
-      <button class="ui primary small button">Add user</button>
+      <button class="ui primary small button openAdd">Add user</button>
 
-      <div id="adduser" class="ui modal">
+      <div id="adduser" class="ui modal" style="display:none">
         <div class="header">user</div>
         <div class="content">
           <p>test</p>
