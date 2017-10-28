@@ -73,7 +73,10 @@
       </div>
 
       <script type="text/javascript">
-        $("#adduser").modal('show');
+        $(document).ready(function(){
+          $("#adduser").modal('show');
+          console.log("transition that bitch");
+        });
       </script>
 
       <div id="edituser" class="ui tiny modal">
