@@ -35,6 +35,10 @@ class API extends mongo {
 
     }
 
+    if($this->method == "GET"){
+      var_dump($this->mongo);
+    }
+
   }
 
 }
