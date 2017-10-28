@@ -18,6 +18,15 @@ $(document).ready(function(){
 
     $("#newUser").toggleClass("loading");
 
+    $.ajax({
+      type: "POST",
+      url: "./inc/api-v2.php",
+      success: function(response){
+        $("#newUser").toggleClass("loading");
+        console.log(response);
+      }
+    })
+
   });
 
 });
