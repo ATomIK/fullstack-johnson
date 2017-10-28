@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <title>MongoDB</title>
     <link rel="stylesheet" href="./assets/s.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/transition.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
     <script src="./assets/jquery.min.js" charset="utf-8"></script>
     <script src="./assets/s.min.js" charset="utf-8"></script>
@@ -64,7 +65,7 @@
 
       <button class="ui primary small button">Add user</button>
 
-      <div id="adduser" class="ui tiny modal">
+      <div id="adduser" class="ui modal">
         <div class="header">user</div>
         <div class="content">
           <p>test</p>
@@ -72,14 +73,7 @@
         </div>
       </div>
 
-      <script type="text/javascript">
-        $(document).ready(function(){
-          $("#adduser").modal('show');
-          console.log("transition that bitch");
-        });
-      </script>
-
-      <div id="edituser" class="ui tiny modal">
+      <div id="edituser" class="ui modal">
         <div class="header">user</div>
         <div class="content">
           <p>test</p>
