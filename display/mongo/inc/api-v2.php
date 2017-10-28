@@ -11,7 +11,7 @@ class API {
   public function processApi(){
 
     // $this->
-    var_dump($this->headers);
+    var_dump($_SERVER);
 
   }
 
