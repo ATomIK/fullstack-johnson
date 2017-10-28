@@ -62,6 +62,24 @@
         </tbody>
       </table>
 
+      <button class="ui primary small button">Add user</button>
+
+      <div id="adduser" class="ui tiny modal">
+        <div class="header">user</div>
+        <div class="content">
+          <p>test</p>
+          <p>test</p>
+        </div>
+      </div>
+
+      <div id="edituser" class="ui tiny modal">
+        <div class="header">user</div>
+        <div class="content">
+          <p>test</p>
+          <p>test</p>
+        </div>
+      </div>
+
       <ul>
         <li>Add user.click: pop up semantic modal and add user</li>
         <li>Row.click: pop up semantic modal and edit user</li>
