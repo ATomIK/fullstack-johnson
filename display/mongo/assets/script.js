@@ -16,7 +16,7 @@ $(document).ready(function(){
   $("#newUser").submit(function(e){
     e.preventDefault();
 
-    $("#newUser").toggleClass(".loading");
+    $("#newUser").toggleClass("loading");
 
   });
 
