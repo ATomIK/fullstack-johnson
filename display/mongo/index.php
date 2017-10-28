@@ -11,24 +11,8 @@
     <script src="./assets/jquery.min.js" charset="utf-8"></script>
     <script src="./assets/s.min.js" charset="utf-8"></script>
     <script src="https://cdn.datatables.net/v/se/dt-1.10.16/datatables.min.js" charset="utf-8"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){
 
-        $("#example").DataTable({
-          ajax: "./inc/api-v1.php",
-          columns: [
-            { "data": "first" },
-            { "data": "last" },
-            { "data": "email" },
-            { "data": "age" },
-            { "data": "nat" }
-          ]
-        });
-
-        $("#adduser").modal('attach events', '.openAdd', 'show');
-
-      });
-    </script>
+    <script src="./assets/script.js" charset="utf-8"></script>
   </head>
   <body>
     <div class="ui container">
@@ -96,7 +80,7 @@
               </div>
             </div>
             <div class="field">
-              <input type="submit" class="ui small primary button" value="Create">
+              <input type="submit" class="ui right floated small primary button" value="Create">
             </div>
           </form>
         </div>
