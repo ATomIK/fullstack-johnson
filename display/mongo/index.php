@@ -55,6 +55,7 @@
         <div class="header">Add new user</div>
         <div class="content">
           <form id="newUser" class="ui form">
+            <input type="hidden" name="__method" value="PUT">
             <div class="two fields">
               <div class="field">
                 <label>First name</label>

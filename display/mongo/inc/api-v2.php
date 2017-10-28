@@ -4,14 +4,20 @@ class API {
 
   public function __construct(){
 
-    $this->headers = getallheaders();
+    $this->method = $_SERVER['REQUEST_METHOD'];
+
+    $this->args = explode('/', rtrim($_SERVER['REQUEST_URI'], '/'));
+
+    while($this->args[0] == '' || $this->args[0] == 'api.php'){
+    	array_shift($this->args);
+    }
 
   }
 
   public function processApi(){
 
-    // $this->
-    var_dump($_SERVER);
+    // if($this->method == "POST")
+    var_dump($this->args);
 
   }
 
