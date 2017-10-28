@@ -20,7 +20,7 @@
         <a class="active item">
           Home
         </a>
-        <a class="item">
+        <a class="item openAdd">
           Add User
         </a>
       </div>
@@ -48,8 +48,6 @@
 
         </tbody>
       </table>
-
-      <button class="ui primary small button openAdd">Add user</button>
 
       <div id="adduser" class="ui tiny modal">
         <div class="header">Add new user</div>
@@ -90,8 +88,36 @@
       <div id="edituser" class="ui modal">
         <div class="header">user</div>
         <div class="content">
-          <p>test</p>
-          <p>test</p>
+          <form id="updateUser" class="ui form">
+            <input type="hidden" name="__method" value="PATCH">
+            <div class="two fields">
+              <div class="field">
+                <label>First name</label>
+                <input type="text" name="first" placeholder="John">
+              </div>
+              <div class="field">
+                <label>Last name</label>
+                <input type="text" name="last" placeholder="Doe">
+              </div>
+            </div>
+            <div class="field">
+              <label>Email address</label>
+              <input type="email" name="email" placeholder="example@example.com">
+            </div>
+            <div class="two fields">
+              <div class="field">
+                <label>Age</label>
+                <input type="number" name="age" placeholder="32">
+              </div>
+              <div class="field">
+                <label>Nationality</label>
+                <input type="text" name="nat" placeholder="US">
+              </div>
+            </div>
+            <div class="field text-right">
+              <input type="submit" class="ui small primary button" value="Create">
+            </div>
+          </form>
         </div>
       </div>
 
