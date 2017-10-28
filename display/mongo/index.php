@@ -70,8 +70,18 @@
       <div id="adduser" class="ui tiny modal">
         <div class="header">user</div>
         <div class="content">
-          <p>test</p>
-          <p>test</p>
+          <form id="newUser" class="ui form">
+            <div class="two fields">
+              <div class="field">
+                <label>First name</label>
+                <input type="text" name="first" placeholder="John">
+              </div>
+              <div class="field">
+                <label>Last name</label>
+                <input type="text" name="last" value="Doe">
+              </div>
+            </div>
+          </form>
         </div>
       </div>
 
