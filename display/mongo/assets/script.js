@@ -16,7 +16,7 @@ $(document).ready(function(){
   $("#newUser").submit(function(e){
     e.preventDefault();
 
-    $(this).classList.add("loading");
+    $("#newUser").toggleClass(".loading");
 
   });
 

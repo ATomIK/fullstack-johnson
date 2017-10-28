@@ -79,8 +79,8 @@
                 <input type="text" name="nat" placeholder="US">
               </div>
             </div>
-            <div class="field">
-              <input type="submit" class="ui right floated small primary button" value="Create">
+            <div class="field text-right">
+              <input type="submit" class="ui small primary button" value="Create">
             </div>
           </form>
         </div>
