@@ -19,7 +19,7 @@ $(document).ready(function(){
     $("#newUser").toggleClass("loading");
 
     $.ajax({
-      type: "POST",
+      type: "GET",
       url: "./inc/api-v2.php",
       data: $("#newUser").serialize(),
       success: function(response){
