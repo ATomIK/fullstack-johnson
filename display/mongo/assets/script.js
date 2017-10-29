@@ -42,12 +42,15 @@ $(document).ready(function(){
   });
 
   $("#example tbody").on('click', 'tr', function(){
+    // get value from first column
+    let mid = datatable.row(this).data()[0];
     if( $(this).hasClass("selected") ) {
       $(this).removeClass("selected");
     } else {
       datatable.$("tr.selected").removeClass("selected");
       $(this).addClass("selected");
       $("#editUser").modal("show");
+      console.log(mid);
     }
   });
 
