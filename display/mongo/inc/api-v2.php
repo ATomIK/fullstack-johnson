@@ -45,7 +45,7 @@ class API extends mongo {
           'age' => $_POST['age'],
           'nat' => $_POST['nat']
         ]);
-        echo json_encode(["status" => true, "data" => $_POST],JSON_PRETTY_PRINT);
+        echo json_encode(["status" => true],JSON_PRETTY_PRINT);
       }
 
     }
