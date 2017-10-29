@@ -41,7 +41,7 @@ class API extends mongo {
 
       // we're updating a user
       if($_POST['__method'] == "PATCH"){
-
+        
       }
 
     }
