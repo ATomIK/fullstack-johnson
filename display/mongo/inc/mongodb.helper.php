@@ -111,4 +111,26 @@ class mongo {
 
   }
 
+  /**
+   * update - updates documents
+   *
+   * @params:
+   *     $doc array : doc to update
+   *     $vals array : values to update $doc
+   * @returns:
+   *     $results array : documents returned from the query
+   */
+
+   public function update($doc,$vals){
+
+     $bulk = new MongoDB\Driver\BulkWrite;
+
+     $bulk->update($doc,['$vals' => $vals],['multi'=>false,'upsert'=>false]);
+
+     $result = $this->mgnr->executeBulkWrite($this->target, $bulk);
+
+     return $result;
+
+   }
+
 }

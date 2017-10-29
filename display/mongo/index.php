@@ -1,4 +1,9 @@
-<?php require './inc/mongodb.helper.php'; ?>
+<?php require './inc/mongodb.helper.php';
+
+$m = new mongo("mongo_tests","users");
+$m->update(["_id" => 42],["first" => "aholA"]);
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -105,7 +110,7 @@
               </div>
             </div>
             <div class="field text-right">
-              <input type="submit" class="ui small success button" value="Save">
+              <input type="submit" class="ui small green button" value="Save">
             </div>
           </form>
         </div>
