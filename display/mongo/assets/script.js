@@ -55,6 +55,8 @@ $(document).ready(function(){
       $.each(data, function(k,v){
         $("#updateUser").find("[name="+k+"]").val(v);
       });
+      // when finished filling data, remove loading class
+      $("#updateUser").toggleClass("loading");
     }
   });
 
