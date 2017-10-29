@@ -27,12 +27,14 @@ class API extends mongo {
       // meaning we're adding a user
       if($_POST['__method'] == "PUT"){
         $this->mongo->insert([
-          '_id' => count($this->mongo->query()),
-          'first' => $_POST['first'],
-          'last' => $_POST['last'],
-          'email' => $_POST['email'],
-          'age' => $_POST['age'],
-          'nat' => $_POST['nat']
+          [
+            '_id' => count($this->mongo->query()),
+            'first' => $_POST['first'],
+            'last' => $_POST['last'],
+            'email' => $_POST['email'],
+            'age' => $_POST['age'],
+            'nat' => $_POST['nat']
+          ]
         ]);
         echo json_encode(["status" => "success"],JSON_PRETTY_PRINT);
       }
