@@ -1,9 +1,11 @@
 function checkVals(arr){
   let empty = true;
   $.each(arr, function(k,v){
-    $("#addUserAlert").fadeIn();
-    $("#addUserMsg").html("Sorry, you can't leave any of these inputs blank!");
-    empty = false;
+    if(v == ""){
+      $("#addUserAlert").fadeIn();
+      $("#addUserMsg").html("Sorry, you can't leave any of these inputs blank!");
+      empty = false;
+    }
   });
   return empty;
 }
