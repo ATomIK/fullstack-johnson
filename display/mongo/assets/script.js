@@ -125,10 +125,14 @@ $(document).ready(function(){
   });
 
   // delete modal settings
-  $("#deleteUser").modal('attach events', '#promptDelete', 'show');
-
-  // $("#promptDelete").click(function(){
-  //
-  // });
+  $("#deleteUser").modal({
+    closable: false,
+    onDeny: function(){
+      window.alert("Do not delete");
+    },
+    onApprove: function(){
+      window.alert("User deleted");
+    }
+  }).modal('attach events', '#promptDelete');
 
 });
