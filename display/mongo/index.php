@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.semanticui.min.css">
     <script src="./assets/jquery.min.js" charset="utf-8"></script>
     <script src="./assets/s.min.js" charset="utf-8"></script>
-    <script src="https://cdn.datatables.net/v/se/dt-1.10.16/datatables.min.js" charset="utf-8"></script>
+    <!-- <script src="https://cdn.datatables.net/v/se/dt-1.10.16/datatables.min.js" charset="utf-8"></script> -->
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.semanticui.min.js" charset="utf-8"></script>
 
     <script src="./assets/script.js" charset="utf-8"></script>
   </head>
@@ -25,7 +26,7 @@
         </a>
       </div>
 
-      <table id="example" class="ui table display"></table>
+      <table id="example" class="ui celled table display"></table>
 
       <div id="adduser" class="ui tiny modal">
         <div class="header">Add new user</div>
