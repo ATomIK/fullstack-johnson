@@ -44,14 +44,7 @@ $(document).ready(function(){
   // set the edit user modal's settings
   $("#editUser").modal({
     onHide: function(){
-      // clear all inputs
-      $.each($("#updateUser").find(".param"), function(k,v){
-        // if(v.val() !== "PATCH"){
-        //   v.val("");
-        // }
-        console.log(v);
-      });
-      // add loader class back on because why not
+      // add loader class
       $("#updateUser").toggleClass("loading");
     }
   });
