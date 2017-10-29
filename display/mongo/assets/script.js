@@ -45,7 +45,7 @@ $(document).ready(function(){
   $("#editUser").modal({
     onHide: function(){
       // clear all inputs
-      $.each($("#updateUser").find("input"), function(k,v){
+      $.each($("#updateUser").find(".param"), function(k,v){
         // if(v.val() !== "PATCH"){
         //   v.val("");
         // }

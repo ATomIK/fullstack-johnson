@@ -83,25 +83,25 @@
             <div class="two fields">
               <div class="field">
                 <label>First name</label>
-                <input type="text" name="first" placeholder="John">
+                <input type="text" name="first" class="param" placeholder="John">
               </div>
               <div class="field">
                 <label>Last name</label>
-                <input type="text" name="last" placeholder="Doe">
+                <input type="text" name="last" class="param" placeholder="Doe">
               </div>
             </div>
             <div class="field">
               <label>Email address</label>
-              <input type="email" name="email" placeholder="example@example.com">
+              <input type="email" name="email" class="param" placeholder="example@example.com">
             </div>
             <div class="two fields">
               <div class="field">
                 <label>Age</label>
-                <input type="number" name="age" placeholder="32">
+                <input type="number" name="age" class="param" placeholder="32">
               </div>
               <div class="field">
                 <label>Nationality</label>
-                <input type="text" name="nat" placeholder="US">
+                <input type="text" name="nat" class="param" placeholder="US">
               </div>
             </div>
             <div class="field text-right">
