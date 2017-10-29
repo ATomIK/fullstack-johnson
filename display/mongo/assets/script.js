@@ -127,9 +127,6 @@ $(document).ready(function(){
   // delete modal settings
   $("#deleteUser").modal({
     closable: false,
-    onDeny: function(){
-      window.alert("Do not delete");
-    },
     onApprove: function(){
       window.alert("User deleted");
     }
