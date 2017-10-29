@@ -71,7 +71,10 @@ $(document).ready(function(){
             nat: decodeURIComponent(paramArr[4])
           }).draw(false);
 
-          console.log(response);
+          // clear inputs
+          $.each(paramArr, function(k,v){
+            $("#newUser").find("[name="+v+"]").val("");
+          });
         }
       })
     }
