@@ -12,7 +12,7 @@ function checkParams(arr){
 
 $(document).ready(function(){
 
-  $("#example").DataTable({
+  var datatable = $("#example").DataTable({
     ajax: "./inc/api-v1.php",
     columns: [
       { "data": "first" },
@@ -21,6 +21,15 @@ $(document).ready(function(){
       { "data": "age" },
       { "data": "nat" }
     ]
+  });
+
+  $("#example tbody").on('click', 'tr', function(){
+    if( $(this).hasClass("selected") ) {
+      $(this).removeClass("selected");
+    } else {
+      datatable.$("tr.selected").removeClass("selected");
+      $(this).addClass("selected");
+    }
   });
 
   $("#adduser").modal('attach events', '.openAdd', 'show');

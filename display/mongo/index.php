@@ -44,9 +44,6 @@
             <th>Nationality</th>
           </tr>
         </tfoot>
-        <tbody>
-
-        </tbody>
       </table>
 
       <div id="adduser" class="ui tiny modal">
