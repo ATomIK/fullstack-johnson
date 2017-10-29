@@ -38,7 +38,7 @@ class API extends mongo {
       }
 
       if($_POST['__method'] == "PATCH"){
-        $this->mongo->update(["_id" => $_POST['_id']],[
+        $this->mongo->update(["_id" => intval($_POST['_id'])],[
           'first' => $_POST['first'],
           'last' => $_POST['last'],
           'email' => $_POST['email'],
