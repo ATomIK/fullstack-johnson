@@ -1,12 +1,12 @@
 function checkParams(arr){
   var params = arr.split('&');
-  let empty = false;
+  let empty = true;
   $.each(params, function(k,v){
     var pkv = v.split('=');
     if(pkv[1] == ""){
       $("#addUserAlert").fadeIn();
       $("#addUserMsg").html("Sorry, you can't leave any of these inputs blank!");
-      empty = true;
+      empty = false;
     }
   });
   return empty;
