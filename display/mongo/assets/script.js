@@ -41,6 +41,20 @@ $(document).ready(function(){
     ]
   });
 
+  // set the edit user modal's settings
+  $("#editUser").modal({
+    onHide: function(){
+      // clear all inputs
+      $.each($("#updateUser").find("input"), function(k,v){
+        if(v.val() !== "PATCH"){
+          v.val("");
+        }
+      });
+      // add loader class back on because why not
+      $("#updateUser").toggleClass("loading");
+    }
+  });
+
   $("#example tbody").on('click', 'tr', function(){
     // get value from first column
     let data = datatable.row($(this)).data();
