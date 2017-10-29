@@ -5,9 +5,8 @@
   <head>
     <meta charset="utf-8">
     <title>DataTables &sdot; Users</title>
-    <!-- <link rel="stylesheet" href="./assets/s.min.css"> -->
+    <link rel="stylesheet" href="./assets/s.min.css">
     <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.semanticui.min.css">
     <script src="./assets/jquery.min.js" charset="utf-8"></script>
     <script src="./assets/s.min.js" charset="utf-8"></script>
@@ -26,7 +25,7 @@
         </a>
       </div>
 
-      <table id="example" class="display"></table>
+      <table id="example" class="ui table display"></table>
 
       <div id="adduser" class="ui tiny modal">
         <div class="header">Add new user</div>
