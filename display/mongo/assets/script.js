@@ -65,13 +65,13 @@ $(document).ready(function(){
 
           // this is bugging out
           // datatable.row.add(paramArr).draw( false );
-          datatable.row.add([
-            "first": "First name",
-            "last": "Last name",
-            "email": "test@test.com",
-            "age": 23,
-            "nat": "US"
-          ]).draw(false);
+          datatable.row.add({
+            first: "First name",
+            last: "Last name",
+            email: "test@test.com",
+            age: 23,
+            nat: "US"
+          }).draw(false);
 
           console.log(response);
         }
