@@ -60,9 +60,7 @@ $(document).ready(function(){
       $("#updateUser").find("[name="+k+"]").val(v);
     });
     // give delete option an id
-    console.log($("#deleteUser").data("mid",data["_id"]));
-
-    // $("#deleteUser").data("mid",data["_id"]);
+    $("#deleteUser").data("mid",data["_id"]);
     // when finished filling data, remove loading class
     $("#updateUser").removeClass("loading");
   });
