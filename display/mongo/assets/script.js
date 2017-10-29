@@ -33,7 +33,9 @@ $(document).ready(function(){
     $("#newUser").addClass("loading");
     $("#addUserAlert").fadeOut();
 
-    if(checkParams($("#newUser").serialize())){
+    if(!checkParams($("#newUser").serialize())){
+      $("#newUser").addClass("loading");
+    } else {
       $.ajax({
         type: "POST",
         url: "./inc/api-v2.php",
@@ -43,8 +45,6 @@ $(document).ready(function(){
           console.log(response);
         }
       })
-    } else {
-      $("#newUser").addClass("loading");
     }
 
   });
