@@ -27,6 +27,7 @@ $(document).ready(function(){
   $("#newUser").submit(function(e){
     e.preventDefault();
 
+    $("#addUserAlert").fadeOut();
     $("#newUser").toggleClass("loading");
 
     checkParams($("#newUser").serialize());

@@ -53,7 +53,7 @@
         <div class="header">Add new user</div>
         <div class="content">
           <div id="addUserAlert" class="ui icon message" style="display:none">
-            <i class="inbox icon"></i>
+            <i class="warning circle icon"></i>
             <div class="content">
               <div class="header">
                 ERROR
