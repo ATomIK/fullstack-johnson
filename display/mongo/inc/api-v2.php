@@ -48,6 +48,11 @@ class API extends mongo {
         echo json_encode(["status" => true],JSON_PRETTY_PRINT);
       }
 
+      if($_POST['__method'] == "DELETE"){
+        $this->mongo->delete(["_id" => $_POST['_id']]);
+        echo json_encode(["status" => true],JSON_PRETTY_PRINT);
+      }
+
     }
 
     // getting data in the form of json

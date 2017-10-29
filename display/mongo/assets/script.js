@@ -59,6 +59,8 @@ $(document).ready(function(){
     $.each(data, function(k,v){
       $("#updateUser").find("[name="+k+"]").val(v);
     });
+    // give delete option an id
+    $("#deleteUser").data("id",data["_id"]);
     // when finished filling data, remove loading class
     $("#updateUser").removeClass("loading");
   });
@@ -128,7 +130,15 @@ $(document).ready(function(){
   $("#deleteUser").modal({
     closable: false,
     onApprove: function(){
-      window.alert("User deleted");
+      $.ajax({
+        type: "POST",
+        url: "./inc/api-v2.php",
+        data: "_id="+$("#deleteUser").data("id")+"&__method=DELETE",
+        success: function(response){
+          console.log(response);
+          datatable.ajax.reload();
+        }
+      })
     }
   }).modal('attach events', '#promptDelete');
 
