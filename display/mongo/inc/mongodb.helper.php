@@ -96,11 +96,11 @@ class mongo {
 
     $results = [];
 
-    if(array_key_exists('_id',$docs) && strlen($docs['_id']) >= 24){
-        $docs['_id'] = new MongoDB\BSON\ObjectID($docs['_id']);
-    }
+    // if(array_key_exists('_id',$docs) && strlen($docs['_id']) >= 24){
+    //     $docs['_id'] = new MongoDB\BSON\ObjectID($docs['_id']);
+    // }
 
-    $query = new MongoDB\Driver\Query($docs);
+    $query = new MongoDB\Driver\Query($docs, []);
 
     $cursor = $this->mgnr->executeQuery($this->target, $query);
 
