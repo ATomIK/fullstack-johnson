@@ -63,14 +63,12 @@ $(document).ready(function(){
         success: function(response){
           $("#newUser").toggleClass("loading");
 
-          // this is bugging out
-          // datatable.row.add(paramArr).draw( false );
           datatable.row.add({
-            first: "First name",
-            last: "Last name",
-            email: "test@test.com",
-            age: 23,
-            nat: "US"
+            first: paramArr[0],
+            last: paramArr[1],
+            email: paramArr[2],
+            age: paramArr[3],
+            nat: paramArr[4]
           }).draw(false);
 
           console.log(response);
