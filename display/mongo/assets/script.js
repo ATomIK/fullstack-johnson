@@ -13,7 +13,7 @@ function checkVals(arr){
 function getParams(str){
   let arr = new Array();
   $.each(str.split("&"), function(k,v){
-    arr.push(v.split("=")[1]);
+    arr.push(v.split("="));
   });
   return arr;
 }
@@ -64,16 +64,16 @@ $(document).ready(function(){
           $("#newUser").toggleClass("loading");
 
           datatable.row.add({
-            first: decodeURIComponent(paramArr[0]),
-            last: decodeURIComponent(paramArr[1]),
-            email: decodeURIComponent(paramArr[2]),
-            age: decodeURIComponent(paramArr[3]),
-            nat: decodeURIComponent(paramArr[4])
+            first: decodeURIComponent(paramArr["first"]),
+            last: decodeURIComponent(paramArr["last"]),
+            email: decodeURIComponent(paramArr["email"]),
+            age: decodeURIComponent(paramArr["age"]),
+            nat: decodeURIComponent(paramArr["nat"])
           }).draw(false);
 
           // clear inputs
           $.each(paramArr, function(k,v){
-            $("#newUser").find("[name="+v+"]").val("");
+            $("#newUser").find("[name="+k+"]").val("");
           });
         }
       })
