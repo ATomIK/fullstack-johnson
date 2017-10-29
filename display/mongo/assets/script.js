@@ -1,3 +1,7 @@
+function checkParams(let arr[]){
+  console.log(arr);
+}
+
 $(document).ready(function(){
 
   $("#example").DataTable({
@@ -18,8 +22,10 @@ $(document).ready(function(){
 
     $("#newUser").toggleClass("loading");
 
+    checkParams($("#newUser").serialize());
+
     $.ajax({
-      type: "GET",
+      type: "POST",
       url: "./inc/api-v2.php",
       data: $("#newUser").serialize(),
       success: function(response){
