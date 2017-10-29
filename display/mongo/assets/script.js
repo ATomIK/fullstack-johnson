@@ -66,12 +66,12 @@ $(document).ready(function(){
           // this is bugging out
           // datatable.row.add(paramArr).draw( false );
           datatable.row.add([
-            "First name",
-            "Last name",
-            "Email",
-            "Age",
-            "Nationality"
-          ]).draw();
+            { "first": "First name" },
+            { "last": "Last name" },
+            { "email": "test@test.com" },
+            { "age": 23 },
+            { "nat": "US" }
+          ]).draw(false);
 
           console.log(response);
         }
