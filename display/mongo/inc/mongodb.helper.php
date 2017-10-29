@@ -116,16 +116,16 @@ class mongo {
    *
    * @params:
    *     $doc array : doc to update
-   *     $vals array : values to update $doc
+   *     $set array : values to update $doc
    * @returns:
    *     $results array : documents returned from the query
    */
 
-   public function update($doc,$vals){
+   public function update($doc,$set){
 
      $bulk = new MongoDB\Driver\BulkWrite;
 
-     $bulk->update($doc,['$vals' => $vals],['multi'=>false,'upsert'=>false]);
+     $bulk->update($doc,['$set' => $set],['multi'=>false,'upsert'=>false]);
 
      $result = $this->mgnr->executeBulkWrite($this->target, $bulk);
 
