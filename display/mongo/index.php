@@ -79,6 +79,7 @@
         <div class="content">
           <form id="updateUser" class="ui form">
             <input type="hidden" name="__method" value="PATCH">
+            <input type="hidden" name="_id" value="">
             <div class="two fields">
               <div class="field">
                 <label>First name</label>

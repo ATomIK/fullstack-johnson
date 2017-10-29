@@ -43,13 +43,18 @@ $(document).ready(function(){
 
   $("#example tbody").on('click', 'tr', function(){
     // get value from first column
-    console.log(datatable.row($(this)).data()["_id"]);
+    let data = datatable.row($(this)).data();
     if( $(this).hasClass("selected") ) {
       $(this).removeClass("selected");
     } else {
       datatable.$("tr.selected").removeClass("selected");
       $(this).addClass("selected");
+      // toggle edit user modal
       $("#editUser").modal("show");
+      // fill form with row's data
+      $.each(data, function(k,v){
+        $("#updateUser").find("[name="+k+"]").val(v);
+      });
     }
   });
 
