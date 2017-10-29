@@ -1,9 +1,11 @@
 function checkParams(arr){
   var params = arr.split('&');
+  var paramArray = new Array();
   $.each(params, function(k,v){
     var pkv = v.split('=');
-    console.log(pkv);
+    paramArray.push(pkv);
   });
+  console.log(paramArray);
 }
 
 $(document).ready(function(){
