@@ -105,7 +105,7 @@
               </div>
             </div>
             <div class="field text-right">
-              <input type="submit" class="ui small primary button" value="Create">
+              <input type="submit" class="ui small success button" value="Save">
             </div>
           </form>
         </div>

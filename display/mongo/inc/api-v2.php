@@ -41,7 +41,9 @@ class API extends mongo {
 
       // we're updating a user
       if($_POST['__method'] == "PATCH"){
-        
+
+        echo json_encode(["status" => "cool"],JSON_PRETTY_PRINT);
+
       }
 
     }
