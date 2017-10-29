@@ -1,9 +1,7 @@
 function checkParams(arr){
-  var params = arr.split('&');
   let empty = true;
-  $.each(params, function(k,v){
-    var pkv = v.split('=');
-    if(pkv[1] == ""){
+  $.each(arr.split('&'), function(k,v){
+    if(v.split('=')[1] == ""){
       $("#addUserAlert").fadeIn();
       $("#addUserMsg").html("Sorry, you can't leave any of these inputs blank!");
       empty = false;
@@ -30,15 +28,15 @@ $(document).ready(function(){
   $("#newUser").submit(function(e){
     e.preventDefault();
 
+    $("#addUserAlert").fadeOut();
     let params = $("#newUser").serialize();
 
-    $("#addUserAlert").fadeOut();
-
     if(checkParams(params)){
-      console.log("i'm in.");
+
       $("#newUser").toggleClass("loading");
+
       $.ajax({
-        type: "GET",
+        type: "POST",
         url: "./inc/api-v2.php",
         data: params,
         success: function(response){
@@ -46,11 +44,7 @@ $(document).ready(function(){
           console.log(response);
         }
       })
-    } else {
-      console.log(params);
     }
-
-    console.log("complete");
 
   });
 

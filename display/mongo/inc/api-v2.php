@@ -1,5 +1,6 @@
 <?php
 
+header('Content-Type: application/json');
 require './mongodb.helper.php';
 
 /**
@@ -25,7 +26,15 @@ class API extends mongo {
       // pseudo put for organization
       // meaning we're adding a user
       if($_POST['__method'] == "PUT"){
-
+        $this->mongo->insert([
+          '_id' => count($this->mongo->query()),
+          'first' => $_POST['first'],
+          'last' => $_POST['last'],
+          'email' => $_POST['email'],
+          'age' => $_POST['age'],
+          'nat' => $_POST['nat']
+        ]);
+        echo json_encode(["status" => "success"],JSON_PRETTY_PRINT);
       }
 
       // we're updating a user
@@ -37,7 +46,6 @@ class API extends mongo {
 
     // getting data in the form of json
     if($this->method == "GET"){
-      header('Content-Type: application/json');
       echo json_encode(["status" => "go away."], JSON_PRETTY_PRINT);
     }
 
