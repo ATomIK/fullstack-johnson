@@ -60,7 +60,7 @@ $(document).ready(function(){
       $("#updateUser").find("[name="+k+"]").val(v);
     });
     // give delete option an id
-    $("#deleteUser").data("id",data["_id"]);
+    $("#deleteUser").data("mid",data["_id"]);
     // when finished filling data, remove loading class
     $("#updateUser").removeClass("loading");
   });
@@ -133,10 +133,7 @@ $(document).ready(function(){
       $.ajax({
         type: "POST",
         url: "./inc/api-v2.php",
-        data: {
-          '__method': "POST",
-          '_id': $("#deleteUser").data("id")
-        },
+        data: "_id="+$("#deleteUser").data("mid")+"&__method=DELETE",
         success: function(response){
           console.log(response);
           datatable.ajax.reload();
