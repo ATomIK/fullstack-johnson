@@ -133,7 +133,10 @@ $(document).ready(function(){
       $.ajax({
         type: "POST",
         url: "./inc/api-v2.php",
-        data: "_id="+$("#deleteUser").data("id")+"&__method=DELETE",
+        data: {
+          '__method': "POST",
+          '_id': $("#deleteUser").data("id")
+        }
         success: function(response){
           console.log(response);
           datatable.ajax.reload();
