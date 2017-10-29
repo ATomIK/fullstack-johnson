@@ -53,7 +53,7 @@ $(document).ready(function(){
     $("#addUserAlert").fadeOut();
     let params = $("#newUser").serialize();
 
-    checkVals(params);
+    checkVals(getParams(params));
 
     // if(checkParams(params)){
     //
