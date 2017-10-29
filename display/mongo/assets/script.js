@@ -43,6 +43,8 @@ $(document).ready(function(){
           console.log(response);
         }
       })
+    } else {
+      $("#newUser").toggleClass("loading");
     }
 
   });
