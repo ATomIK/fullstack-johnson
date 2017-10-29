@@ -136,7 +136,7 @@ $(document).ready(function(){
         data: {
           '__method': "POST",
           '_id': $("#deleteUser").data("id")
-        }
+        },
         success: function(response){
           console.log(response);
           datatable.ajax.reload();
