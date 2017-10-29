@@ -64,11 +64,11 @@ $(document).ready(function(){
           $("#newUser").toggleClass("loading");
 
           datatable.row.add({
-            first: paramArr[0],
-            last: paramArr[1],
-            email: paramArr[2],
-            age: paramArr[3],
-            nat: paramArr[4]
+            first: decodeURIComponent(paramArr[0]),
+            last: decodeURIComponent(paramArr[1]),
+            email: decodeURIComponent(paramArr[2]),
+            age: decodeURIComponent(paramArr[3]),
+            nat: decodeURIComponent(paramArr[4])
           }).draw(false);
 
           console.log(response);
