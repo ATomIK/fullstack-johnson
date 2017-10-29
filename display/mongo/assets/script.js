@@ -123,7 +123,7 @@ $(document).ready(function(){
       data: params,
       success: function(response){
         $("#editUser").modal('hide');
-        datatable.draw();
+        datatable.ajax.reload();
       }
     })
 
