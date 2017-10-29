@@ -46,7 +46,7 @@ $(document).ready(function(){
     allowMultiple: true,
     onHide: function(){
       // add loader class
-      $("#updateUser").toggleClass("loading");
+      $("#updateUser").addClass("loading");
     }
   }).modal('setting','transition','vertical flip');
 
@@ -65,7 +65,7 @@ $(document).ready(function(){
         $("#updateUser").find("[name="+k+"]").val(v);
       });
       // when finished filling data, remove loading class
-      $("#updateUser").toggleClass("loading");
+      $("#updateUser").removeClass("loading");
     }
   });
 
