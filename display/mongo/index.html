@@ -118,7 +118,7 @@
                   </div>
                 </button>
                 <div class="or"></div>
-                <button type="submit" class="ui small compact red animated button" tabindex="0">
+                <button id="promptDelete" class="ui small red animated button" tabindex="0">
                   <div class="visible content">Delete</div>
                   <div class="hidden content">
                     <i class="trash icon"></i>
@@ -127,6 +127,26 @@
               </div>
             </div>
           </form>
+        </div>
+      </div>
+
+      <div id="deleteUser" class="ui basic tiny modal">
+        <div class="ui icon header">
+          <i class="trash icon"></i>
+          Delete User
+        </div>
+        <div class="content">
+          <p>Are you sure you want to delete this user?</p>
+        </div>
+        <div class="actions">
+          <div class="ui red basic cancel inverted button">
+            <i class="remove icon"></i>
+            No
+          </div>
+          <div class="ui green ok inverted button">
+            <i class="checkmark icon"></i>
+            Yes
+          </div>
         </div>
       </div>
 

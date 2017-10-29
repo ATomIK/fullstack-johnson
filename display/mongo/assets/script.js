@@ -43,6 +43,7 @@ $(document).ready(function(){
 
   // set the edit user modal's settings
   $("#editUser").modal({
+    allowMultiple: true,
     onHide: function(){
       // add loader class
       $("#updateUser").toggleClass("loading");
@@ -128,5 +129,12 @@ $(document).ready(function(){
     })
 
   });
+
+  // delete modal settings
+  $("#deleteUser").modal('attach events', '#promptDelete');
+
+  // $("#promptDelete").click(function(){
+  //
+  // });
 
 });
