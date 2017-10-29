@@ -25,26 +25,7 @@
         </a>
       </div>
 
-      <table id="example" class="display">
-        <thead>
-          <tr>
-            <th>First</th>
-            <th>Last</th>
-            <th>Email</th>
-            <th>Age</th>
-            <th>Nationality</th>
-          </tr>
-        </thead>
-        <tfoot>
-          <tr>
-            <th>First</th>
-            <th>Last</th>
-            <th>Email</th>
-            <th>Age</th>
-            <th>Nationality</th>
-          </tr>
-        </tfoot>
-      </table>
+      <table id="example" class="display"></table>
 
       <div id="adduser" class="ui tiny modal">
         <div class="header">Add new user</div>

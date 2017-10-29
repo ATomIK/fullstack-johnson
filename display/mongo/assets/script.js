@@ -23,11 +23,11 @@ $(document).ready(function(){
   var datatable = $("#example").DataTable({
     ajax: "./inc/api-v1.php",
     columns: [
-      { "data": "first" },
-      { "data": "last" },
-      { "data": "email" },
-      { "data": "age" },
-      { "data": "nat" }
+      { "title": "First name", "data": "first" },
+      { "title": "Last name", "data": "last" },
+      { "title": "Email", "data": "email" },
+      { "title": "Age", "data": "age" },
+      { "title": "Nationality", "data": "nat" }
     ]
   });
 
@@ -71,7 +71,7 @@ $(document).ready(function(){
             "Email",
             "Age",
             "Nationality"
-          ]).draw( false );
+          ]).draw();
 
           console.log(response);
         }
