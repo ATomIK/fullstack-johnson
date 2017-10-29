@@ -74,8 +74,8 @@
         </div>
       </div>
 
-      <div id="edituser" class="ui modal">
-        <div class="header">user</div>
+      <div id="editUser" class="ui tiny modal">
+        <div class="header">Edit user</div>
         <div class="content">
           <form id="updateUser" class="ui form">
             <input type="hidden" name="__method" value="PATCH">

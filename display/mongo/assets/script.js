@@ -47,6 +47,7 @@ $(document).ready(function(){
     } else {
       datatable.$("tr.selected").removeClass("selected");
       $(this).addClass("selected");
+      $("#editUser").modal("show");
     }
   });
 
