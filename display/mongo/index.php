@@ -9,9 +9,9 @@
     <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"> -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.semanticui.min.css">
     <script src="./assets/jquery.min.js" charset="utf-8"></script>
-    <script src="./assets/s.min.js" charset="utf-8"></script>
-    <!-- <script src="https://cdn.datatables.net/v/se/dt-1.10.16/datatables.min.js" charset="utf-8"></script> -->
+    <script src="https://cdn.datatables.net/v/se/dt-1.10.16/datatables.min.js" charset="utf-8"></script>
     <script src="https://cdn.datatables.net/1.10.16/js/dataTables.semanticui.min.js" charset="utf-8"></script>
+    <script src="./assets/s.min.js" charset="utf-8"></script>
 
     <script src="./assets/script.js" charset="utf-8"></script>
   </head>
