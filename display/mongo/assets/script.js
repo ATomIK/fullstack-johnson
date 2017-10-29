@@ -131,7 +131,7 @@ $(document).ready(function(){
   });
 
   // delete modal settings
-  $("#deleteUser").modal('attach events', '#promptDelete');
+  $("#deleteUser").modal('attach events', '#promptDelete', 'show');
 
   // $("#promptDelete").click(function(){
   //
