@@ -52,13 +52,13 @@
       <div id="adduser" class="ui tiny modal">
         <div class="header">Add new user</div>
         <div class="content">
-          <div id="newUserAlert" class="ui icon message" style="display:block">
+          <div id="addUserAlert" class="ui icon message" style="display:none">
             <i class="inbox icon"></i>
             <div class="content">
               <div class="header">
                 ERROR
               </div>
-              <p id="newUserMsg">Loading...</p>
+              <p id="addUserMsg">Loading...</p>
             </div>
           </div>
           <form id="newUser" class="ui form">
