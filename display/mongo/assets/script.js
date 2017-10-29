@@ -30,18 +30,16 @@ $(document).ready(function(){
   $("#newUser").submit(function(e){
     e.preventDefault();
 
-    $("#newUser").addClass("loading");
     $("#addUserAlert").fadeOut();
 
-    if(!checkParams($("#newUser").serialize())){
-      $("#newUser").removeClass("loading");
-    } else {
+    if(checkParams($("#newUser").serialize())){
+      $("#newUser").toggleClass("loading");
       $.ajax({
         type: "GET",
         url: "./inc/api-v2.php",
         data: $("#newUser").serialize(),
         success: function(response){
-          // $("#newUser").removeClass("loading");
+          $("#newUser").toggleClass("loading");
           console.log(response);
         }
       })
