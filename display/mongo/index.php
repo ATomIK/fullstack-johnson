@@ -52,6 +52,15 @@
       <div id="adduser" class="ui tiny modal">
         <div class="header">Add new user</div>
         <div class="content">
+          <div id="newUserAlert" class="ui icon message" style="display:block">
+            <i class="inbox icon"></i>
+            <div class="content">
+              <div class="header">
+                ERROR
+              </div>
+              <p id="newUserMsg">Loading...</p>
+            </div>
+          </div>
           <form id="newUser" class="ui form">
             <input type="hidden" name="__method" value="PUT">
             <div class="two fields">

@@ -1,11 +1,12 @@
 function checkParams(arr){
   var params = arr.split('&');
-  var paramArray = new Array();
   $.each(params, function(k,v){
     var pkv = v.split('=');
-    paramArray.push(pkv);
+    if(pkv[1] == ""){
+      $("#addUserAlert").fadeIn();
+      $("#addUserMsg").html("Sorry, you can't leave any of these inputs blank!");
+    }
   });
-  console.log(paramArray);
 }
 
 $(document).ready(function(){
