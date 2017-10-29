@@ -124,7 +124,7 @@ $(document).ready(function(){
       url: "./inc/api-v2.php",
       data: params,
       success: function(response){
-        $("#addUser").modal("hide");
+        $("#addUser").modal('hide');
         datatable.draw();
       }
     })
