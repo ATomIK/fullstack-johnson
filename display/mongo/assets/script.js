@@ -30,12 +30,12 @@ $(document).ready(function(){
       { "title": "Age", "data": "age" },
       { "title": "Nationality", "data": "nat" }
     ],
-    // columnDefs: [
-    //   {
-    //     "targets": [ 0 ],
-    //     "visible": false
-    //   }
-    // ]
+    columnDefs: [
+      {
+        "targets": [ 0 ],
+        "visible": false
+      }
+    ]
   });
 
   $("#example tbody").on('click', 'tr', function(){
