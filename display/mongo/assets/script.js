@@ -35,6 +35,7 @@ $(document).ready(function(){
     $("#addUserAlert").fadeOut();
 
     if(checkParams(params)){
+      console.log("i'm in.");
       $("#newUser").toggleClass("loading");
       $.ajax({
         type: "GET",
@@ -45,7 +46,11 @@ $(document).ready(function(){
           console.log(response);
         }
       })
+    } else {
+      console.log(params);
     }
+
+    console.log("complete");
 
   });
 
