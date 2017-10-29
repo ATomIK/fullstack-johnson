@@ -111,7 +111,7 @@
       </div>
 
       <ul>
-        <li>Add user.click: pop up semantic modal and add user</li>
+        <li><s>Add user.click: pop up semantic modal and add user</s></li>
         <li>Row.click: pop up semantic modal and edit user</li>
         <li>Delete at bottom of edit modal</li>
         <li>Done!</li>

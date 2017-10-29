@@ -23,12 +23,19 @@ $(document).ready(function(){
   var datatable = $("#example").DataTable({
     ajax: "./inc/api-v1.php",
     columns: [
+      { "title": "MID", "data": "_id" },
       { "title": "First name", "data": "first" },
       { "title": "Last name", "data": "last" },
       { "title": "Email", "data": "email" },
       { "title": "Age", "data": "age" },
       { "title": "Nationality", "data": "nat" }
-    ]
+    ],
+    // columnDefs: [
+    //   {
+    //     "targets": [ 0 ],
+    //     "visible": false
+    //   }
+    // ]
   });
 
   $("#example tbody").on('click', 'tr', function(){
