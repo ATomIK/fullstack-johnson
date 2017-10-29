@@ -23,8 +23,6 @@ class API extends mongo {
 
     if($this->method == "POST"){
 
-      // pseudo put for organization
-      // meaning we're adding a user
       if($_POST['__method'] == "PUT"){
         $this->mongo->insert([
           [
@@ -36,14 +34,18 @@ class API extends mongo {
             'nat' => $_POST['nat']
           ]
         ]);
-        echo json_encode(["status" => "success"],JSON_PRETTY_PRINT);
+        echo json_encode(["status" => true],JSON_PRETTY_PRINT);
       }
 
-      // we're updating a user
       if($_POST['__method'] == "PATCH"){
-
-        echo json_encode(["_id" => $_POST['_id']],JSON_PRETTY_PRINT);
-
+        $this->mongo->update(["_id" => $_POST['_id']],[
+          'first' => $_POST['first'],
+          'last' => $_POST['last'],
+          'email' => $_POST['email'],
+          'age' => $_POST['age'],
+          'nat' => $_POST['nat']
+        ]);
+        echo json_encode(["status" => true],JSON_PRETTY_PRINT);
       }
 
     }
