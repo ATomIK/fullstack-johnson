@@ -28,7 +28,7 @@ class API extends mongo {
       if($_POST['__method'] == "PUT"){
         $this->mongo->insert([
           [
-            '_id' => count($this->mongo->query()),
+            '_id' => count($this->mongo->query())+1,
             'first' => $_POST['first'],
             'last' => $_POST['last'],
             'email' => $_POST['email'],
