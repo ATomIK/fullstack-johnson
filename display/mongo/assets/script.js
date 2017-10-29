@@ -47,7 +47,7 @@ $(document).ready(function(){
     let params = $("#newUser").serialize();
     let paramArr = getParams(params);
 
-    if(checkParams(paramArr)){
+    if(checkVals(paramArr)){
 
       $("#newUser").toggleClass("loading");
 
