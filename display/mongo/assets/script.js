@@ -1,14 +1,15 @@
 function checkParams(arr){
   var params = arr.split('&');
+  let empty = false;
   $.each(params, function(k,v){
     var pkv = v.split('=');
     if(pkv[1] == ""){
       $("#addUserAlert").fadeIn();
       $("#addUserMsg").html("Sorry, you can't leave any of these inputs blank!");
-      return false;
+      empty = true;
     }
   });
-  return true;
+  return empty;
 }
 
 $(document).ready(function(){
