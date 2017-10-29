@@ -49,7 +49,7 @@ class API extends mongo {
       }
 
       if($_POST['__method'] == "DELETE"){
-        $this->mongo->delete([["_id" => $_POST['_id']]]);
+        $this->mongo->delete([["_id" => intval($_POST['_id'])]]);
         echo json_encode(["status" => true, "_id" => $_POST['_id']],JSON_PRETTY_PRINT);
       }
 
