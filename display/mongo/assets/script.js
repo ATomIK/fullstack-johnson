@@ -61,6 +61,7 @@ $(document).ready(function(){
     });
     // give delete option an id
     console.log(data);
+    
     $("#deleteUser").data("mid",data["_id"]);
     // when finished filling data, remove loading class
     $("#updateUser").removeClass("loading");
