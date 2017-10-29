@@ -2,7 +2,7 @@
 
 $m = new mongo("mongo_tests", "users");
 
-var_dump(count($this->mongo->query()));
+var_dump(count($m->query()));
 
 ?>
 
