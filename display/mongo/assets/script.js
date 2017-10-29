@@ -46,9 +46,10 @@ $(document).ready(function(){
     onHide: function(){
       // clear all inputs
       $.each($("#updateUser").find("input"), function(k,v){
-        if(v.val() !== "PATCH"){
-          v.val("");
-        }
+        // if(v.val() !== "PATCH"){
+        //   v.val("");
+        // }
+        console.log(v);
       });
       // add loader class back on because why not
       $("#updateUser").toggleClass("loading");
