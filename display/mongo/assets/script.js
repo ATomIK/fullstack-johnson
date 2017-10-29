@@ -37,11 +37,11 @@ $(document).ready(function(){
       $("#newUser").removeClass("loading");
     } else {
       $.ajax({
-        type: "POST",
+        type: "GET",
         url: "./inc/api-v2.php",
         data: $("#newUser").serialize(),
         success: function(response){
-          $("#newUser").removeClass("loading");
+          // $("#newUser").removeClass("loading");
           console.log(response);
         }
       })
