@@ -30,8 +30,8 @@ $(document).ready(function(){
   $("#newUser").submit(function(e){
     e.preventDefault();
 
+    $("#newUser").addClass("loading");
     $("#addUserAlert").fadeOut();
-    $("#newUser").toggleClass("loading");
 
     if(checkParams($("#newUser").serialize())){
       $.ajax({
@@ -39,12 +39,12 @@ $(document).ready(function(){
         url: "./inc/api-v2.php",
         data: $("#newUser").serialize(),
         success: function(response){
-          $("#newUser").toggleClass("loading");
+          $("#newUser").removeClass("loading");
           console.log(response);
         }
       })
     } else {
-      $("#newUser").toggleClass("loading");
+      $("#newUser").addClass("loading");
     }
 
   });
