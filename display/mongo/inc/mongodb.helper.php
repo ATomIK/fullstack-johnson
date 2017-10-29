@@ -100,7 +100,7 @@ class mongo {
     //     $docs['_id'] = new MongoDB\BSON\ObjectID($docs['_id']);
     // }
 
-    $query = new MongoDB\Driver\Query($docs, []);
+    $query = new MongoDB\Driver\Query($docs);
 
     $cursor = $this->mgnr->executeQuery($this->target, $query);
 

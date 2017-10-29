@@ -1,8 +1,8 @@
 <?php require './inc/mongodb.helper.php';
 
-$m = new mongo("mongo_test", "users");
+$m = new mongo("mongo_tests", "users");
 
-var_dump($m->query([[]]));
+var_dump($m->query());
 
 ?>
 
