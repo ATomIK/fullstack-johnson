@@ -5,6 +5,9 @@ function checkParams(arr){
     if(pkv[1] == ""){
       $("#addUserAlert").fadeIn();
       $("#addUserMsg").html("Sorry, you can't leave any of these inputs blank!");
+      return false;
+    } else {
+      return true;
     }
   });
 }
@@ -30,17 +33,17 @@ $(document).ready(function(){
     $("#addUserAlert").fadeOut();
     $("#newUser").toggleClass("loading");
 
-    checkParams($("#newUser").serialize());
-
-    $.ajax({
-      type: "POST",
-      url: "./inc/api-v2.php",
-      data: $("#newUser").serialize(),
-      success: function(response){
-        $("#newUser").toggleClass("loading");
-        console.log(response);
-      }
-    })
+    if(checkParams($("#newUser").serialize())){
+      $.ajax({
+        type: "POST",
+        url: "./inc/api-v2.php",
+        data: $("#newUser").serialize(),
+        success: function(response){
+          $("#newUser").toggleClass("loading");
+          console.log(response);
+        }
+      })
+    }
 
   });
 
