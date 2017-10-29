@@ -47,7 +47,7 @@ $(document).ready(function(){
       // add loader class
       $("#updateUser").toggleClass("loading");
     }
-  });
+  }).modal('setting','transition','vertical flip');
 
   $("#example tbody").on('click', 'tr', function(){
     // get value from first column
