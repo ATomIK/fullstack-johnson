@@ -75,6 +75,9 @@ $(document).ready(function(){
           $.each(paramArr, function(k,v){
             $("#newUser").find("[name="+v[0]+"]").val("");
           });
+
+          // close modal
+          $("#adduser").modal('hide');
         }
       })
     }
