@@ -1,7 +1,8 @@
 function checkParams(arr){
   var params = arr.split('&');
   $.each(params, function(k,v){
-    console.log(v);
+    var pkv = split('=');
+    console.log(pkv);
   });
 }
 
