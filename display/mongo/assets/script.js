@@ -34,7 +34,7 @@ $(document).ready(function(){
     $("#addUserAlert").fadeOut();
 
     if(!checkParams($("#newUser").serialize())){
-      $("#newUser").addClass("loading");
+      $("#newUser").removeClass("loading");
     } else {
       $.ajax({
         type: "POST",
