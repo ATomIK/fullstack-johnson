@@ -43,7 +43,7 @@ $(document).ready(function(){
 
   $("#example tbody").on('click', 'tr', function(){
     // get value from first column
-    console.log(datatable.row(this).data()[0]);
+    console.log(datatable.row($(this)).data()[0]);
     if( $(this).hasClass("selected") ) {
       $(this).removeClass("selected");
     } else {
