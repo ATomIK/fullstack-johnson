@@ -64,16 +64,16 @@ $(document).ready(function(){
           $("#newUser").toggleClass("loading");
 
           datatable.row.add({
-            first: decodeURIComponent(paramArr["first"]),
-            last: decodeURIComponent(paramArr["last"]),
-            email: decodeURIComponent(paramArr["email"]),
-            age: decodeURIComponent(paramArr["age"]),
-            nat: decodeURIComponent(paramArr["nat"])
+            first: decodeURIComponent(paramArr[0][1]),
+            last: decodeURIComponent(paramArr[1][1]),
+            email: decodeURIComponent(paramArr[2][1]),
+            age: decodeURIComponent(paramArr[3][1]),
+            nat: decodeURIComponent(paramArr[4][1])
           }).draw(false);
 
           // clear inputs
           $.each(paramArr, function(k,v){
-            $("#newUser").find("[name="+k+"]").val("");
+            $("#newUser").find("[name="+v[0]+"]").val("");
           });
         }
       })
