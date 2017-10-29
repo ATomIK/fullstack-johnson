@@ -1,4 +1,10 @@
-<?php require './inc/mongodb.helper.php'; ?>
+<?php require './inc/mongodb.helper.php';
+
+$m = new mongo("mongo_test", "users");
+
+var_dump($m->query());
+
+?>
 
 <!DOCTYPE html>
 <html>
