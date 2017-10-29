@@ -48,8 +48,7 @@ $(document).ready(function(){
     $("#addUserAlert").fadeOut();
     let params = $("#newUser").serialize();
     let paramArr = getParams(params);
-
-    console.log(paramArr);
+    paramArr.shift(); // since paramArr[0] is the pseudo method
 
     if(checkVals(paramArr)){
 
