@@ -50,6 +50,8 @@ $(document).ready(function(){
     let paramArr = getParams(params);
     paramArr.shift(); // since paramArr[0] is the pseudo method
 
+    console.log(paramArr);
+
     if(checkVals(paramArr)){
 
       $("#newUser").toggleClass("loading");
@@ -60,7 +62,17 @@ $(document).ready(function(){
         data: params,
         success: function(response){
           $("#newUser").toggleClass("loading");
-          datatable.row.add(paramArr).draw( false );
+
+          // this is bugging out
+          // datatable.row.add(paramArr).draw( false );
+          datatable.row.add([
+            "First name",
+            "Last name",
+            "Email",
+            "Age",
+            "Nationality"
+          ]).draw( false );
+
           console.log(response);
         }
       })
