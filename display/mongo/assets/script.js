@@ -1,4 +1,4 @@
-function checkParams(let arr[]){
+function checkParams(arr){
   console.log(arr);
 }
 
