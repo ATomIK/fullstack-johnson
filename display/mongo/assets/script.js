@@ -135,7 +135,6 @@ $(document).ready(function(){
         url: "./inc/api-v2.php",
         data: "_id="+$("#deleteUser").data("mid")+"&__method=DELETE",
         success: function(response){
-          console.log(response);
           datatable.ajax.reload();
         }
       })
