@@ -3,13 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>DataTables &sdot; Users</title>
+
     <link rel="stylesheet" href="./assets/s.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.semanticui.min.css">
+
+
     <script src="./assets/jquery.min.js" charset="utf-8"></script>
     <script src="https://cdn.datatables.net/v/se/dt-1.10.16/datatables.min.js" charset="utf-8"></script>
     <script src="https://cdn.datatables.net/1.10.16/js/dataTables.semanticui.min.js" charset="utf-8"></script>
     <script src="./assets/s.min.js" charset="utf-8"></script>
-
     <script src="./assets/script.js" charset="utf-8"></script>
   </head>
   <body>
@@ -65,8 +67,13 @@
                 <input type="text" name="nat" placeholder="US">
               </div>
             </div>
-            <div class="field text-right">
-              <input type="submit" class="ui small primary button" value="Create">
+            <div class="field">
+              <button type="submit" class="ui small primary animated button" tabindex="0">
+                <div class="visible content">Create</div>
+                <div class="hidden content">
+                  <i class="upload icon"></i>
+                </div>
+              </button>
             </div>
           </form>
         </div>
@@ -102,8 +109,13 @@
                 <input type="text" name="nat" placeholder="US">
               </div>
             </div>
-            <div class="field text-right">
-              <input type="submit" class="ui small green button" value="Save">
+            <div class="field">
+              <button type="submit" class="ui small green animated button" tabindex="0">
+                <div class="visible content">Save</div>
+                <div class="hidden content">
+                  <i class="edit icon"></i>
+                </div>
+              </button>
             </div>
           </form>
         </div>
@@ -111,7 +123,7 @@
 
       <ul>
         <li><s>Add user.click: pop up semantic modal and add user</s></li>
-        <li>Row.click: pop up semantic modal and edit user</li>
+        <li><s>Row.click: pop up semantic modal and edit user</s></li>
         <li>Delete at bottom of edit modal</li>
         <li>Done!</li>
       </ul>
