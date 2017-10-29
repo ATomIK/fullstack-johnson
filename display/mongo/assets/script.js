@@ -35,6 +35,9 @@ $(document).ready(function(){
         "targets": [ 0 ],
         "visible": false
       }
+    ],
+    order: [
+      [ 1, "asc" ]
     ]
   });
 
