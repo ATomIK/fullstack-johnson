@@ -30,14 +30,16 @@ $(document).ready(function(){
   $("#newUser").submit(function(e){
     e.preventDefault();
 
+    let params = $("#newUser").serialize();
+
     $("#addUserAlert").fadeOut();
 
-    if(checkParams($("#newUser").serialize())){
+    if(checkParams(params)){
       $("#newUser").toggleClass("loading");
       $.ajax({
         type: "GET",
         url: "./inc/api-v2.php",
-        data: $("#newUser").serialize(),
+        data: params,
         success: function(response){
           $("#newUser").toggleClass("loading");
           console.log(response);
