@@ -6,10 +6,9 @@ function checkParams(arr){
       $("#addUserAlert").fadeIn();
       $("#addUserMsg").html("Sorry, you can't leave any of these inputs blank!");
       return false;
-    } else {
-      return true;
     }
   });
+  return true;
 }
 
 $(document).ready(function(){
