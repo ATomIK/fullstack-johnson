@@ -116,15 +116,13 @@ $(document).ready(function(){
     e.preventDefault();
 
     var params = $("#updateUser").serialize();
-    // dunno if i need this or not but ok
-    var paramArr = getParams(params);
 
     $.ajax({
       type: "POST",
       url: "./inc/api-v2.php",
       data: params,
       success: function(response){
-        $("#addUser").modal('hide');
+        $("#editUser").modal('hide');
         datatable.draw();
       }
     })
