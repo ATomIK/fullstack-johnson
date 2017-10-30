@@ -1,7 +1,6 @@
 function checkVals(arr,modal){
   let hasVal = true;
   $.each(arr, function(k,v){
-    console.log(v);
     if(v[1] == ""){
       hasVal = false;
     }
