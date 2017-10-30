@@ -1,12 +1,20 @@
-function checkVals(arr){
-  let empty = true;
+function checkVals(arr,modal){
+  let hasVal = true;
   $.each(arr, function(k,v){
     if(v == ""){
-      $("#addUserAlert").fadeIn();
-      $("#addUserMsg").html("Sorry, you can't leave any of these inputs blank!");
-      empty = false;
+      hasVal = false;
     }
   });
+  if(!hasVal){
+    if(modal == 1){
+      $("#addUserAlert").fadeIn();
+      $("#addUserMsg").html("Sorry, you can't leave any of these inputs blank!");
+    } else if(modal == 2){
+      $("#updateUserAlert").fadeIn();
+      $("#updateUserMsg").html("Sorry, you can't leave any of these inputs blank!");
+    }
+  }
+
   return empty;
 }
 
@@ -75,9 +83,7 @@ $(document).ready(function(){
     let paramArr = getParams(params);
     paramArr.shift(); // since paramArr[0] is the pseudo method
 
-    console.log(paramArr);
-
-    if(checkVals(paramArr)){
+    if(checkVals(paramArr,1)){
 
       $("#newUser").toggleClass("loading");
 
@@ -88,7 +94,6 @@ $(document).ready(function(){
         success: function(response){
           $("#newUser").toggleClass("loading");
 
-          // need to also add MID
           datatable.row.add({
             _id: response._id,
             first: decodeURIComponent(paramArr[0][1]),
@@ -115,16 +120,22 @@ $(document).ready(function(){
     e.preventDefault();
 
     var params = $("#updateUser").serialize();
+    var paramArr = getParams(params);
+    paramArr.shift(); // __method
 
-    $.ajax({
-      type: "POST",
-      url: "./inc/api-v2.php",
-      data: params,
-      success: function(response){
-        $("#editUser").modal('hide');
-        datatable.ajax.reload();
-      }
-    })
+    if(checkVals(paramArr,2)){
+
+      $.ajax({
+        type: "POST",
+        url: "./inc/api-v2.php",
+        data: params,
+        success: function(response){
+          $("#editUser").modal('hide');
+          datatable.ajax.reload();
+        }
+      });
+
+    }
 
   });
 

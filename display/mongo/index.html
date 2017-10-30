@@ -83,6 +83,17 @@
         <div class="header">Edit user</div>
         <div class="content">
           <form id="updateUser" class="ui form loading">
+
+            <div id="updateUserAlert" class="ui icon message" style="display:none">
+              <i class="warning circle icon"></i>
+              <div class="content">
+                <div class="header">
+                  ERROR
+                </div>
+                <p id="updateUserMsg"></p>
+              </div>
+            </div>
+
             <input type="hidden" name="__method" value="PATCH">
             <input type="hidden" name="_id" value="">
             <div class="two fields">
