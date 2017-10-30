@@ -17,17 +17,7 @@ class API extends mongo {
 
     $this->method = $_SERVER['REQUEST_METHOD'];
 
-    // $this->highestId = $this->getHighest();
-
   }
-
-  // public function getHighest(){
-  //
-  //   $all = $this->mongo->query();
-  //
-  //   var_dump($all);
-  //
-  // }
 
   public function processApi(){
 
