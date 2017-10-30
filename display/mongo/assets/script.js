@@ -88,8 +88,6 @@ $(document).ready(function(){
         success: function(response){
           $("#newUser").toggleClass("loading");
 
-          console.log(response._id);
-
           // need to also add MID
           datatable.row.add({
             _id: response._id,
