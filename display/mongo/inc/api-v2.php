@@ -11,9 +11,9 @@ require './mongodb.helper.php';
 
 class API extends mongo {
 
-  public function __construct(){
+  public function __construct($db,$col){
 
-    $this->mongo = new mongo("mongo_tests", "users");
+    $this->mongo = new mongo($db, $col);
 
     $this->method = $_SERVER['REQUEST_METHOD'];
 
@@ -35,7 +35,7 @@ class API extends mongo {
             'nat' => $_POST['nat']
           ]
         ]);
-        echo json_encode(["status" => true, "_id" = $newId],JSON_PRETTY_PRINT);
+        echo json_encode(["status" => true, "_id" => $newId],JSON_PRETTY_PRINT);
       }
 
       if($_POST['__method'] == "PATCH"){
@@ -65,5 +65,5 @@ class API extends mongo {
 
 }
 
-$api = new Api;
+$api = new Api("mongo_tests", "users");
 $api->processApi();
