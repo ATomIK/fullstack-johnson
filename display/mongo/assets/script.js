@@ -88,6 +88,7 @@ $(document).ready(function(){
         success: function(response){
           $("#newUser").toggleClass("loading");
 
+          // need to also add MID
           datatable.row.add({
             first: decodeURIComponent(paramArr[0][1]),
             last: decodeURIComponent(paramArr[1][1]),

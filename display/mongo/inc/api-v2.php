@@ -17,6 +17,16 @@ class API extends mongo {
 
     $this->method = $_SERVER['REQUEST_METHOD'];
 
+    $this->highestId = $this->getHighest();
+
+  }
+
+  public function getHighest(){
+
+    $all = $this->query();
+
+    var_dump($all);
+
   }
 
   public function processApi(){
@@ -24,9 +34,10 @@ class API extends mongo {
     if($this->method == "POST"){
 
       if($_POST['__method'] == "PUT"){
+        $newId = count($this->mongo->query())+1;
         $this->mongo->insert([
           [
-            '_id' => count($this->mongo->query())+1,
+            '_id' => $newId,
             'first' => $_POST['first'],
             'last' => $_POST['last'],
             'email' => $_POST['email'],
@@ -34,7 +45,7 @@ class API extends mongo {
             'nat' => $_POST['nat']
           ]
         ]);
-        echo json_encode(["status" => true],JSON_PRETTY_PRINT);
+        echo json_encode(["status" => true, "_id" = $newId],JSON_PRETTY_PRINT);
       }
 
       if($_POST['__method'] == "PATCH"){
@@ -57,7 +68,7 @@ class API extends mongo {
 
     // getting data in the form of json
     if($this->method == "GET"){
-      echo json_encode(["status" => "go away."], JSON_PRETTY_PRINT);
+      echo json_encode(["status" => "go away.", "all" => $this->getHighest()], JSON_PRETTY_PRINT);
     }
 
   }
