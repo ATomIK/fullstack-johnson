@@ -90,6 +90,7 @@ $(document).ready(function(){
 
           // need to also add MID
           datatable.row.add({
+            MID: response._id,
             first: decodeURIComponent(paramArr[0][1]),
             last: decodeURIComponent(paramArr[1][1]),
             email: decodeURIComponent(paramArr[2][1]),

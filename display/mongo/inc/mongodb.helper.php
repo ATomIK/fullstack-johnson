@@ -6,6 +6,8 @@
  * @description - a less messy mongo helper.
  */
 
+ini_set("display_errors", "-1");
+
 class mongo {
 
   public function __construct($db=null,$col=null){
