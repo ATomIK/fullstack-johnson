@@ -23,7 +23,7 @@ class API extends mongo {
 
   public function getHighest(){
 
-    $all = $this->query();
+    $all = $this->mongo->query();
 
     var_dump($all);
 
@@ -68,7 +68,7 @@ class API extends mongo {
 
     // getting data in the form of json
     if($this->method == "GET"){
-    echo json_encode(["status" => "go away."/*, "all" => $this->getHighest()*/], JSON_PRETTY_PRINT);
+      echo json_encode(["status" => "go away.", "all" => $this->getHighest()], JSON_PRETTY_PRINT);
     }
 
   }
