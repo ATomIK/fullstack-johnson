@@ -15,7 +15,7 @@ function checkVals(arr,modal){
     }
   }
 
-  return empty;
+  return hasVal;
 }
 
 function getParams(str){
