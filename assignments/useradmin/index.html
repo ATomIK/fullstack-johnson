@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DataTables &sdot; Users</title>
+
+    <link rel="stylesheet" href="./assets/s.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.semanticui.min.css">
+
+
+    <script src="./assets/jquery.min.js" charset="utf-8"></script>
+    <script src="https://cdn.datatables.net/v/se/dt-1.10.16/datatables.min.js" charset="utf-8"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.semanticui.min.js" charset="utf-8"></script>
+    <script src="./assets/s.min.js" charset="utf-8"></script>
+    <script src="./assets/script.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="ui container">
+      <div class="ui pointing  menu">
+        <a class="active item">
+          Home
+        </a>
+        <a class="item openAdd">
+          Add User
+        </a>
+      </div>
+
+      <table id="example" class="ui celled table display"></table>
+
+      <div id="adduser" class="ui tiny modal">
+        <div class="header">Add new user</div>
+        <div class="content">
+          <form id="newUser" class="ui form">
+
+            <div id="addUserAlert" class="ui icon message" style="display:none">
+              <i class="warning circle icon"></i>
+              <div class="content">
+                <div class="header">
+                  ERROR
+                </div>
+                <p id="addUserMsg"></p>
+              </div>
+            </div>
+
+            <input type="hidden" name="__method" value="PUT">
+            <div class="two fields">
+              <div class="field">
+                <label>First name</label>
+                <input type="text" name="first" placeholder="John">
+              </div>
+              <div class="field">
+                <label>Last name</label>
+                <input type="text" name="last" placeholder="Doe">
+              </div>
+            </div>
+            <div class="field">
+              <label>Email address</label>
+              <input type="email" name="email" placeholder="example@example.com">
+            </div>
+            <div class="two fields">
+              <div class="field">
+                <label>Age</label>
+                <input type="number" name="age" placeholder="32">
+              </div>
+              <div class="field">
+                <label>Nationality</label>
+                <input type="text" name="nat" placeholder="US">
+              </div>
+            </div>
+            <div class="field">
+              <button type="submit" class="ui small primary animated button" tabindex="0">
+                <div class="visible content">Create</div>
+                <div class="hidden content">
+                  <i class="upload icon"></i>
+                </div>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div id="editUser" class="ui tiny modal">
+        <div class="header">Edit user</div>
+        <div class="content">
+          <form id="updateUser" class="ui form loading">
+
+            <div id="updateUserAlert" class="ui icon message" style="display:none">
+              <i class="warning circle icon"></i>
+              <div class="content">
+                <div class="header">
+                  ERROR
+                </div>
+                <p id="updateUserMsg"></p>
+              </div>
+            </div>
+
+            <input type="hidden" name="__method" value="PATCH">
+            <input type="hidden" name="_id" value="">
+            <div class="two fields">
+              <div class="field">
+                <label>First name</label>
+                <input type="text" name="first" placeholder="John">
+              </div>
+              <div class="field">
+                <label>Last name</label>
+                <input type="text" name="last" placeholder="Doe">
+              </div>
+            </div>
+            <div class="field">
+              <label>Email address</label>
+              <input type="email" name="email" placeholder="example@example.com">
+            </div>
+            <div class="two fields">
+              <div class="field">
+                <label>Age</label>
+                <input type="number" name="age" placeholder="32">
+              </div>
+              <div class="field">
+                <label>Nationality</label>
+                <input type="text" name="nat" placeholder="US">
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui small buttons">
+                <button type="submit" class="ui small green animated button" tabindex="0">
+                  <div class="visible content">Save</div>
+                  <div class="hidden content">
+                    <i class="edit icon"></i>
+                  </div>
+                </button>
+                <div class="or"></div>
+                <button id="promptDelete" type="button" class="ui small red animated button" tabindex="0">
+                  <div class="visible content">Delete</div>
+                  <div class="hidden content">
+                    <i class="trash icon"></i>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div id="deleteUser" data-mid="" class="ui basic tiny modal">
+        <div class="ui icon header">
+          <i class="trash icon"></i>
+          Delete User
+        </div>
+        <div class="content">
+          <center>
+            <p>Are you sure you want to delete this user?</p>
+          </center>
+        </div>
+        <div class="actions">
+          <div class="ui red basic cancel inverted button">
+            <i class="remove icon"></i>
+            No
+          </div>
+          <div class="ui green ok inverted button">
+            <i class="checkmark icon"></i>
+            Yes
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </body>
+</html>
