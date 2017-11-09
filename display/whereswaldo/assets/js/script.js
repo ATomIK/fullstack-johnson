@@ -2,7 +2,7 @@ $(document).ready(function(){
 
   setInterval(function(){
     var dt = new Date();
-    $("#time").html(dt.getMilliseconds())
-  },1000);
+    $("#time").html(dt.getHours()+":"+dt.getMinutes()+":"+dt.getMilliseconds())
+  },500);
 
 });
