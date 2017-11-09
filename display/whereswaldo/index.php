@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,7 +7,10 @@
   </head>
   <body>
 
-    ahh
+    <h1 id="time">00:00</h1>
+
+    <script src="//code.jquery.com/jquery-3.2.1.min.js" charset="utf-8"></script>
+    <script src="./assets/js/script.js" charset="utf-8"></script>
 
   </body>
 </html>
