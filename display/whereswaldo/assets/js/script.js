@@ -13,8 +13,8 @@ $(document).ready(function(){
   let curr = dr.getTime();
   let nr = Math.round(dr.getTime()/1000) + 300; // add 5 minutes
   setInterval(function(){
-    console.log(curr);
-    $("#timer").html(curr/1000+" - "+nr+" = "+(curr/1000 - nr));
+    // console.log(curr/1000 + 300);
+    $("#timer").html(nr+" - "+curr/1000+" = "+(nr - curr/1000));
   },1);
 
 });
