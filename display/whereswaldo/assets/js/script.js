@@ -1,3 +1,7 @@
+function pad(n,v){
+
+}
+
 $(document).ready(function(){
 
   setInterval(function(){
@@ -6,10 +10,11 @@ $(document).ready(function(){
   },1);
 
   let dr = new Date();
+  let curr = dr.getTime();
   let nr = Math.round(dr.getTime()/1000) + 300; // add 5 minutes
   setInterval(function(){
-    // no you
-    $("#timer").html(dr.getTime()/1000+" - "+nr+" = "+(dr.getTime()/1000 - nr));
+    console.log(curr);
+    $("#timer").html(curr/1000+" - "+nr+" = "+(curr/1000 - nr));
   },1);
 
 });
