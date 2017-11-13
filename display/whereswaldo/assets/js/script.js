@@ -11,10 +11,10 @@ $(document).ready(function(){
 
   let dr = new Date();
   let curr = dr.getTime();
-  let nr = Math.round(dr.getTime()/1000) + 300; // add 5 minutes
+  let nr = Math.round(curr/1000) + 300; // add 5 minutes
   setInterval(function(){
     // console.log(curr/1000 + 300);
-    $("#timer").html(nr+" - "+curr/1000+" = "+(nr - curr/1000));
+    $("#timer").html(nr+" - "+Math.round(curr/1000)+" = "+Math.round(nr - curr/1000));
   },1);
 
 });
