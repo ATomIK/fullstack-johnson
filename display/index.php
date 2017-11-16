@@ -10,6 +10,7 @@
       <li><a href="./upload/">Form Upload w/ XHR Requests</a></li>
       <li><a href="./mongo/">MongoDB; Randomuser.me; DataTables; User manipulation.</a></li>
       <li><a href="./whereswaldo/">Where's Waldo generator; Leaderboards</a></li>
+      <li><a href="./shop/">Shopping cart system; MongoDB</a></li>
     </ul>
     <p><a href="https://github.com/ut-tom/fullstack-johnson">Github Repo!</a></p>
   </body>
