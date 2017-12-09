@@ -37,7 +37,7 @@ class ImageHelper
      */
     function place_waldo($base_image, $waldo, $width, $height, $x = 0, $y = 0, $new_name = null, $path = null)
     {
-        
+
         // Turn it into a GD resource if necessary.
         $base_image = $this->to_resource($base_image);
 
@@ -127,7 +127,7 @@ class ImageHelper
 
         // Turn it into a GD resource if necessary.
         $img = $this->to_resource($in_file);
-        
+
         // allocate a GD color resource with the RGB passed in via $color.
         $removeColour = imagecolorallocate($img, (int)$color[0], (int)$color[1], (int)$color[2]);
 
@@ -147,7 +147,7 @@ class ImageHelper
         if ($new_name) {
             $this->save_image($img, $path, $new_name);
         }
-        
+
         return $img;
     }
 
@@ -183,7 +183,7 @@ class ImageHelper
 
     public function clone_img_resource($img)
     {
-        
+
         //Get width from image.
         $w = imagesx($img);
 
@@ -192,7 +192,7 @@ class ImageHelper
 
         //Get the transparent color from a 256 palette image.
         $trans = imagecolortransparent($img);
-        
+
           //If this is a true color image...
         if (imageistruecolor($img)) {
             $clone = imagecreatetruecolor($w, $h);
@@ -201,17 +201,17 @@ class ImageHelper
         } //If this is a 256 color palette image...
         else {
             $clone = imagecreate($w, $h);
-        
+
             //If the image has transparency...
             if ($trans >= 0) {
                 $rgb = imagecolorsforindex($img, $trans);
-        
+
                 imagesavealpha($clone, true);
                 $trans_index = imagecolorallocatealpha($clone, $rgb['red'], $rgb['green'], $rgb['blue'], $rgb['alpha']);
                 imagefill($clone, 0, 0, $trans_index);
             }
         }
-        
+
           //Create the Clone!!
           imagecopy($clone, $img, 0, 0, 0, 0, $w, $h);
           var_dump($clone);
@@ -310,7 +310,7 @@ class ImageHelper
     }
 }
 
-if ($argv[1] == 'run_image_tests') {
+if ($_GET['arg'] == 'run_image_tests') {
     echo"Running tests...\n";
 
     // Create instance of our image helper
