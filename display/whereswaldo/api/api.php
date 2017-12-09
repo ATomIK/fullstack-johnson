@@ -184,7 +184,35 @@ class MyAPI extends API
 
     }
 
+    public function find_distance(){
 
+      $x = (double)$this->request['click_x'];
+			$y = (double)$this->request['click_y'];
+			$game_id = $this->request['game_id'];
+
+			//Search for the game image name in the data base
+			//to find a record with the waldo's x and y values
+			$doc['game_id'] = $game_id;
+			$result = $this->mh->query($doc);
+
+			$this->temparray = [];
+			$this->flatten_array($result);
+
+
+			foreach($this->temparray[0] as $key=>$val)
+			{
+				$data[$key] = $val;
+			}
+
+			$x2 = (double)$data['waldo_x'];
+			$y2 = (double)$data['waldo_y'];
+			$output = $x . " " . $y . " " .$x2 . " " . $y2;
+
+			//find the distance
+			$distance = sqrt(pow(($x - $x2), 2) + pow(($y - $y2), 2));
+
+			return $distance;
+    }
 
     /////////////////////////////////////////////////////
     private function flatten_array($array){
