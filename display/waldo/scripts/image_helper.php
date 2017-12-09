@@ -331,7 +331,7 @@ if ($_GET['arg'] == 'run_image_tests') {
 
     $waldoImg = $waldoGame->resize_waldo('../waldo_images/waldo_walking_200x451.png', 16, 32, 'waldo_resized', './test_output');
 
-    $waldoGame->place_waldo('./fullstack/waldo/images/crowd.jpg', $waldoImg, 16, 32, 300, 300);
+    $base = $waldoGame->place_waldo('./fullstack/waldo/images/crowd.jpg', $waldoImg, 16, 32, 300, 300);
 
     var_dump($waldoGame->save_image($base, './test_output', "asdf.jpg"));
 
