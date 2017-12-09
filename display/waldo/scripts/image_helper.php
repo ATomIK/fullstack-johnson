@@ -333,7 +333,7 @@ if ($_GET['arg'] == 'run_image_tests') {
 
     $base = $waldoGame->place_waldo('./fullstack/waldo/images/crowd.jpg', $waldoImg, 16, 32, 300, 300);
 
-    var_dump($waldoGame->save_image($base, '/var/www/html/bricewa/fullstack/waldo/scripts/test_output/', 'fuckyou.jpg'));
+    var_dump($waldoGame->save_image($base, '/var/www/html/display/waldo/scripts/test_output', 'fuckyou.jpg'));
 
     echo "done";
 
