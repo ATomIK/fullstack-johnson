@@ -4,10 +4,11 @@ ini_set("display_errors", "-1");
 
 require("mongo_helper.php");
 
-class ImageHelper
+class ImageHelper extends mongoHelper
 {
     public function __construct()
     {
+        $this->mh = new mongoHelper('waldos','coords');
         $this->waldo_images    = "/var/www/html/waldo/waldo_images/";
         $this->scene_images    = "/var/www/html/waldo/images/";
         $this->save_directory  =  "/var/www/html/waldo/images/saved/";
@@ -45,6 +46,13 @@ class ImageHelper
 
         // $waldo = $this->clone_img_resource($waldo);
         // var_dump($waldo);
+
+        $this->mh->insert([
+          [
+            "x" => $x,
+            "y" => $y
+          ]
+        ]);
 
         imagesavealpha($waldo, false);
         imagealphablending($waldo, false);
@@ -320,6 +328,10 @@ if ($_GET['arg'] == 'run_image_tests') {
 
     // open up the camping image and make the white background transparent (not awesome)
     $waldoGame->make_transparent('../waldo_images/waldo_camping_537x429.jpg', [0,0,0], 'camping_transparent.png', './test_output');
+
+    $waldoImg = $waldoGame->resize_waldo('../waldo_images/waldo_walking_200x451.png', 16, 32, 'waldo_resized', './test_output');
+
+    $waldoGame->place_waldo('./fullstack/waldo/images/crowd.jpg', $waldoImg, 16, 32, 300, 300);
 
     echo "done";
 
