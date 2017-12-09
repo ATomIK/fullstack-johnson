@@ -142,7 +142,6 @@ abstract class API
     }
 }
 
-
 class MyAPI extends API
 {
     public function __construct()
@@ -159,24 +158,24 @@ class MyAPI extends API
         $args = $this->request;
 
         $game_id = (string)time();
-        $waldo_height = 32;
-        $waldo_width = 16;
+        $waldo_height = 100;
+        $waldo_width = 100;
 
         // Create instance of our image helper
         $waldoGame = new ImageHelper();
 
         // example resizing a waldo image
-        $waldoImg = $waldoGame->resize_waldo('waldo_walking_200x451.png', $waldo_width, $waldo_height);
+        $waldoImg = $waldoGame->resize_waldo('../waldo_images/waldo_walking_200x451.png', $waldo_width, $waldo_height);
 
-        list($base_width,$base_height,$null1,$null2) = getimagesize('/var/www/html/waldo/images/crowd.jpg');
+        list($base_width,$base_height,$null1,$null2) = getimagesize('../images/crowd.jpg');
 
         $rx = rand(0,$base_width);
         $ry = rand(0,$base_height);
 
-        $data = ['x'=>$rx,'y'=>$ry,'game_id'=>$game_id,'image_path'=>'/var/www/html/waldo/game_images','img_type'=>'png'];
+        $data = ['x'=>$rx,'y'=>$ry,'game_id'=>$game_id,'image_path'=>'../game_images','img_type'=>'png'];
 
         // put a single waldo on another image
-        $waldoGame->place_waldo('/var/www/html/waldo/images/crowd.jpg', $waldoImg, $waldo_width, $waldo_height, $rx, $ry, $game_id.'.png', '/var/www/html/waldo/game_images');
+        $waldoGame->place_waldo('/var/www/html/waldo/images/crowd.jpg', $waldoImg, $waldo_width, $waldo_height, $rx, $ry, $game_id.'.png', '../game_images');
 
         $this->mh->insert([$data]);
 
