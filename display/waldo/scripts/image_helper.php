@@ -320,47 +320,47 @@ if ($_GET['arg'] == 'run_image_tests') {
     $waldoGame->make_transparent('/var/www/html/waldo/waldo_images/waldo_camping_537x429.jpg', [0,0,0], 'camping_transparent.png', '/var/www/html/waldo/scripts/test_output');
 
     // example resizing a waldo image
-    $waldoImg = $waldoGame->resize_waldo('waldo_walking_200x451.png', 16, 32, 'waldo_resized', '/var/www/html/waldo/scripts/test_output');
-
-    // put a single waldo on another image
-    $waldoGame->place_waldo('/var/www/html/waldo/images/crowd.jpg', $waldoImg, 16, 32, 100, 100, 'single_waldo_on_background', '/var/www/html/waldo/scripts/test_output');
-
-    // initialize some vars
-    $waldo_width = 17;
-    $waldo_height = 35;
-
-    //need size of base image so we can generate random locations
-    list($base_width,$base_height,$null1,$null2) = getimagesize('/var/www/html/waldo/images/crowd.jpg');
-
-    //get a waldo image resource without saving it to a file
-    $waldoImg = $waldoGame->resize_waldo('waldo_walking_200x451.png', $waldo_width, $waldo_height);
-
-    // path to image where we will place our waldos
-    $base = '/var/www/html/waldo/images/crowd.jpg';
-    $max = 2;
-    $name = "{$max}_waldos";
-
-    //array of waldo resources
-    $waldos = [];
-
-    // load array with copies of waldo and flip half of them
-    for ($i=0; $i<$max; $i++) {
-        $waldos[$i] = $waldoGame->clone_img_resource($waldoImg);
-        if ($i % 2 == 0) {
-            imageflip($waldos[$i], IMG_FLIP_HORIZONTAL);
-        }
-    }
-
-    // put our waldos on the base image
-    for ($i=0; $i<$max; $i++) {
-        $rx = rand(0, $base_width);
-        $ry = rand(0, $base_height);
-        echo"Putting another waldo at x:{$rx} y:{$ry}\n";
-        $base = $waldoGame->place_waldo($base, $waldos[$i], $waldo_width,$waldo_height, $rx, $ry);
-
-    }
-
-    // save the base image with all the waldos on it
-    $waldoGame->save_image($base, '/var/www/html/waldo/scripts/test_output', $name);
-    $waldoGame->color_waldo('waldo_camping_537x429.jpg',[214,24,52],[14,66,115],'waldo_camping_blue_537x429.jpg', '/var/www/html/waldo/waldo_images/');
+    // $waldoImg = $waldoGame->resize_waldo('waldo_walking_200x451.png', 16, 32, 'waldo_resized', '/var/www/html/waldo/scripts/test_output');
+    //
+    // // put a single waldo on another image
+    // $waldoGame->place_waldo('/var/www/html/waldo/images/crowd.jpg', $waldoImg, 16, 32, 100, 100, 'single_waldo_on_background', '/var/www/html/waldo/scripts/test_output');
+    //
+    // // initialize some vars
+    // $waldo_width = 17;
+    // $waldo_height = 35;
+    //
+    // //need size of base image so we can generate random locations
+    // list($base_width,$base_height,$null1,$null2) = getimagesize('/var/www/html/waldo/images/crowd.jpg');
+    //
+    // //get a waldo image resource without saving it to a file
+    // $waldoImg = $waldoGame->resize_waldo('waldo_walking_200x451.png', $waldo_width, $waldo_height);
+    //
+    // // path to image where we will place our waldos
+    // $base = '/var/www/html/waldo/images/crowd.jpg';
+    // $max = 2;
+    // $name = "{$max}_waldos";
+    //
+    // //array of waldo resources
+    // $waldos = [];
+    //
+    // // load array with copies of waldo and flip half of them
+    // for ($i=0; $i<$max; $i++) {
+    //     $waldos[$i] = $waldoGame->clone_img_resource($waldoImg);
+    //     if ($i % 2 == 0) {
+    //         imageflip($waldos[$i], IMG_FLIP_HORIZONTAL);
+    //     }
+    // }
+    //
+    // // put our waldos on the base image
+    // for ($i=0; $i<$max; $i++) {
+    //     $rx = rand(0, $base_width);
+    //     $ry = rand(0, $base_height);
+    //     echo"Putting another waldo at x:{$rx} y:{$ry}\n";
+    //     $base = $waldoGame->place_waldo($base, $waldos[$i], $waldo_width,$waldo_height, $rx, $ry);
+    //
+    // }
+    //
+    // // save the base image with all the waldos on it
+    // $waldoGame->save_image($base, '/var/www/html/waldo/scripts/test_output', $name);
+    // $waldoGame->color_waldo('waldo_camping_537x429.jpg',[214,24,52],[14,66,115],'waldo_camping_blue_537x429.jpg', '/var/www/html/waldo/waldo_images/');
 }
