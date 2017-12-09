@@ -317,7 +317,9 @@ if ($_GET['arg'] == 'run_image_tests') {
     $waldoGame = new ImageHelper();
 
     // open up the camping image and make the white background transparent (not awesome)
-    $waldoGame->make_transparent('/var/www/html/waldo/waldo_images/waldo_camping_537x429.jpg', [0,0,0], 'camping_transparent.png', '/var/www/html/waldo/scripts/test_output');
+    $waldoGame->make_transparent('../waldo_images/waldo_camping_537x429.jpg', [0,0,0], 'camping_transparent.png', './test_output');
+
+    echo "done";
 
     // example resizing a waldo image
     // $waldoImg = $waldoGame->resize_waldo('waldo_walking_200x451.png', 16, 32, 'waldo_resized', '/var/www/html/waldo/scripts/test_output');
