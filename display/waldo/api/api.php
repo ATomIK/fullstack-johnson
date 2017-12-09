@@ -175,7 +175,9 @@ class MyAPI extends API
         $data = ['x'=>$rx,'y'=>$ry,'game_id'=>$game_id,'image_path'=>'/var/www/html/display/waldo/game_images','img_type'=>'png'];
 
         // put a single waldo on another image
-        $waldoGame->place_waldo('/var/www/html/display/waldo/images/crowd.jpg', $waldoImg, $waldo_width, $waldo_height, $rx, $ry, $game_id.'.png', '/var/www/html/display/waldo/game_images');
+        $base = $waldoGame->place_waldo('/var/www/html/display/waldo/images/crowd.jpg', $waldoImg, $waldo_width, $waldo_height, $rx, $ry, $game_id.'.png', '/var/www/html/display/waldo/game_images');
+
+        $waldoGame->save_image($base, '/var/www/html/display/waldo/scripts/test_output', "asdf.jpg");
 
         $this->mh->insert([$data]);
 
