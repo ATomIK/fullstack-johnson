@@ -25,12 +25,12 @@
             -o-background-size: cover; */
             /* background-size: contain; */
         }
-        
+
         #thumb {
             width: 1024px;
             height: 800px;
         }
-        
+
         .mycenter {
             margin-left: auto;
             margin-right: auto;
@@ -83,7 +83,7 @@
 
 
     <!-- Bootstrap core JavaScript -->
-    <script src="./js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/Event.js"></script>
     <script src="./js/Magnifier.js"></script>
@@ -92,7 +92,7 @@
         $(".mycenter").click(function(evt) {
             console.log(evt);
         });
-        
+
         $("#startTimer").click(function(){
         blur($("#thumb"),0);
         var evt = new Event();
@@ -137,7 +137,7 @@
 
 	timer = setInterval(showRemaining, 1);
         });
-        
+
         function blur(elem,x){
 	    var filterVal = 'blur('+x+'px)';
 
@@ -147,13 +147,13 @@
 		.css('oFilter', filterVal)
 		.css('msFilter', filterVal);
 	}
-	
+
 	$(document).ready(function(){
 		blur($("#thumb"),20);
 	});
-        
+
         /*function startTimer(){
-	    
+
             setInterval({
                 $("#timer").html(03 + ":" + 00 + ":" + 00);
             },1);
