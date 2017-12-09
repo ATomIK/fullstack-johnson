@@ -47,34 +47,34 @@ abstract class API
         header("Access-Control-Allow-Orgin: *");
         header("Access-Control-Allow-Methods: *");
         header("Content-Type: application/json");
-        
+
         $this->logger = new thelog();
         $this->logger->clear_log();
 
         $this->method = $_SERVER['REQUEST_METHOD'];
         $this->request_uri = $_SERVER['REQUEST_URI'];
-        
+
         $this->logger->do_log($this->method);
-        
+
         $this->args = explode('/', rtrim($this->request_uri, '/'));
-        
+
         $this->logger->do_log($this->args);
-        
+
         while ($this->args[0] != 'api.php') {
             array_shift($this->args);
         }
         array_shift($this->args);
-        
+
         $this->endpoint = array_shift($this->args);
 
 
         if (strpos($this->endpoint, '?')) {
             list($this->endpoint,$urlargs) = explode('?', $this->endpoint);
         }
-        
+
         $this->logger->do_log($this->args, "args array:");
         $this->logger->do_log($this->endpoint, "endpoint:");
-        
+
 
         switch ($this->method) {
             case 'POST':
@@ -92,7 +92,7 @@ abstract class API
                 $this->_response('Invalid Method', 405);
                 break;
         }
-        
+
         if ($urlargs) {
             $urlargs = explode('&', $urlargs);
             for ($i=0; $i<sizeof($urlargs); $i++) {
@@ -101,7 +101,7 @@ abstract class API
             }
         }
     }
-    
+
     public function processAPI()
     {
         $this->logger->do_log($this->endpoint);
@@ -142,12 +142,13 @@ abstract class API
     }
 }
 
+
 class MyAPI extends API
 {
     public function __construct()
     {
         parent::__construct();
-        
+
         $this->mdb = 'waldogame';
         $this->mh = new mongoHelper($this->mdb);
         $this->mh->setDbcoll('gameimages');
@@ -166,9 +167,9 @@ class MyAPI extends API
 
         // example resizing a waldo image
         $waldoImg = $waldoGame->resize_waldo('waldo_walking_200x451.png', $waldo_width, $waldo_height);
-    
+
         list($base_width,$base_height,$null1,$null2) = getimagesize('/var/www/html/waldo/images/crowd.jpg');
-        
+
         $rx = rand(0,$base_width);
         $ry = rand(0,$base_height);
 
@@ -216,8 +217,8 @@ class MyAPI extends API
         }
         return $data;
     }
-     
-     
+
+
     private function isAssoc(array $arr)
     {
         if (array() === $arr) {
@@ -225,7 +226,7 @@ class MyAPI extends API
         }
         return array_keys($arr) !== range(0, count($arr) - 1);
     }
-    
+
     private function has_string_keys(array $array)
     {
         return count(array_filter(array_keys($array), 'is_string')) > 0;
