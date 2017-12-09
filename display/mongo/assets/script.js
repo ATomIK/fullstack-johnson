@@ -49,6 +49,13 @@ $(document).ready(function(){
     ]
   });
 
+  $(".random_user").click(function(){
+    // send post to delete whole collection
+    $.post("./inc/api-v2.php", {__method:"DELETE"});
+    // get new collection
+    datatable.ajax.reload();
+  });
+
   // set the edit user modal's settings
   $("#editUser").modal({
     allowMultiple: true,

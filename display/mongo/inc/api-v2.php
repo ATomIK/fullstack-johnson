@@ -73,8 +73,12 @@ class API extends mongo {
    */
 
   public function delete_user(){
-    $this->mongo->delete([["_id" => intval($_POST['_id'])]]);
-    echo json_encode(["status" => true, "_id" => $_POST['_id']],JSON_PRETTY_PRINT);
+    if(!isset($_POST['_id'])){
+      $this->mongo->delete();
+    } else {
+      $this->mongo->delete([["_id" => intval($_POST['_id'])]]);
+    }
+    echo json_encode(["status" => true],JSON_PRETTY_PRINT);
   }
 
   /**
