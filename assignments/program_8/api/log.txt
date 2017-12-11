@@ -1,6 +1,9 @@
-
+GET
 Array
 (
     [0] => 
+    [1] => program_8
+    [2] => api
+    [3] => api.php?generate
 )
 

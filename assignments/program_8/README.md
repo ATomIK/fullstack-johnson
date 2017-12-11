@@ -1,1 +1,1 @@
-https://blackrockdigital.github.io/startbootstrap-the-big-picture/
+https://bricewa.me/fullstack/waldo/
