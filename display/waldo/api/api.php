@@ -157,6 +157,10 @@ class MyAPI extends API
     public function make_game_board(){
         $args = $this->request;
 
+        // return $args;
+
+        $args = $this->request;
+
         $game_id = (string)time();
         $waldo_height = 100;
         $waldo_width = 100;
@@ -165,19 +169,17 @@ class MyAPI extends API
         $waldoGame = new ImageHelper();
 
         // example resizing a waldo image
-        $waldoImg = $waldoGame->resize_waldo('/var/www/html/display/waldo/waldo_images/waldo_walking_200x451.png', $waldo_width, $waldo_height);
+        $waldoImg = $waldoGame->resize_waldo('/var/www/html/bricewa/fullstack/waldo/waldo_images/waldo_walking_200x451.png', $waldo_width, $waldo_height);
 
-        list($base_width,$base_height,$null1,$null2) = getimagesize('/var/www/html/display/waldo/images/crowd.jpg');
+        list($base_width,$base_height,$null1,$null2) = getimagesize('/var/www/html/bricwa/fullstack/waldo/images/crowd.jpg');
 
         $rx = rand(0,$base_width);
         $ry = rand(0,$base_height);
 
-        $data = ['x'=>$rx,'y'=>$ry,'game_id'=>$game_id,'image_path'=>'/var/www/html/display/waldo/game_images','img_type'=>'png'];
+        $data = ['x'=>$rx,'y'=>$ry,'game_id'=>$game_id,'image_path'=>'/var/www/html/bricewa/fullstack/waldo/game_images','img_type'=>'png'];
 
         // put a single waldo on another image
-        $base = $waldoGame->place_waldo('/var/www/html/display/waldo/images/crowd.jpg', $waldoImg, $waldo_width, $waldo_height, $rx, $ry, $game_id.'.png', '/var/www/html/display/waldo/game_images');
-
-        $waldoGame->save_image($base, '/var/www/html/display/waldo/scripts/test_output', "asdf.jpg");
+        $waldoGame->place_waldo('/var/www/html/bricewa/fullstack/waldo/images/crowd.jpg', $waldoImg, $waldo_width, $waldo_height, $rx, $ry, $game_id.'.png', '/var/www/html/bricewa/fullstack/waldo/game_images');
 
         $this->mh->insert([$data]);
 
@@ -185,34 +187,47 @@ class MyAPI extends API
 
     }
 
-    public function find_distance(){
+    private function is_in_box($x,$y,$box){
+        $directions='Go: ';
+        $found = false;
+        $x_c = ($box[0]+$box[2])/2;
+        $y_c = ($box[1]+$box[3])/2;
+        $x /=0.8195669607;
+        $y /=0.96144578313;
+        $x_d =$x-$x_c;
+        $y_d =$y-$y_c;
+        if($x >=$box[0] && $x <= $box[2])
+            if($y >=$box[1] && $y <= $box[3]){
+                $found = true;
+                $directions = 'You found him !';
+            }
+        if(!$found){
+            if($x_d < 0&& $x_d < -10){
+                $directions .="Right";
+        }
+            elseif($x_d >0 && $x_d > 10){
+                $directions .="Left";
+        }
+            if($y_d < 0 &&$y_d < -10){
+                $directions .=" Down";
+        }
+            elseif($y_d >0 && $y_d> 10){
+                $directions .=" Up";
+        }}
 
-      $x = (double)$this->request['click_x'];
-			$y = (double)$this->request['click_y'];
-			$game_id = $this->request['game_id'];
+        $result = [0 => $found, 1 => $directions];
+        return $result;
 
-			//Search for the game image name in the data base
-			//to find a record with the waldo's x and y values
-			$doc['game_id'] = $game_id;
-			$result = $this->mh->query($doc);
+    }
 
-			$this->temparray = [];
-			$this->flatten_array($result);
-
-
-			foreach($this->temparray[0] as $key=>$val)
-			{
-				$data[$key] = $val;
-			}
-
-			$x2 = (double)$data['waldo_x'];
-			$y2 = (double)$data['waldo_y'];
-			$output = $x . " " . $y . " " .$x2 . " " . $y2;
-
-			//find the distance
-			$distance = sqrt(pow(($x - $x2), 2) + pow(($y - $y2), 2));
-
-			return $distance;
+    public function distance(){
+        $result = json_decode(json_encode($this->mh->query()),true);
+        $args = $this->request;
+        $result = $result[0]['bbox'];
+        $ret_res= $this->is_in_box($args['x'],$args['y'],$result);
+        $test=['found' => $ret_res[0], 'directions' => $ret_res[1]];
+        $this->logger->do_log($test);
+        return ['found' => $ret_res[0], 'directions' => $ret_res[1]];
     }
 
     /////////////////////////////////////////////////////
